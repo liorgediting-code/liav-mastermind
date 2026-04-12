@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>המאסטרמיינד – סדנת מכירות ושיווק | ליאב וליאור</title>
+  <meta name="description" content="12 בעלי עסקים, יום אחד, תוצאות אמיתיות. למד מכירות ושיווק ברמה הכי גבוהה – המאסטרמיינד בראש העין." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange:       #F5700A;
+      --orange-light: #FF8C2A;
+      --orange-dark:  #C95A00;
+      --orange-pale:  #FFF3EA;
+      --text-dark:    #1A1A1A;
+      --text-mid:     #3D3D3D;
+      --text-light:   #666;
+      --white:        #FFFFFF;
+      --section-bg:   #FAFAFA;
+      --border:       #E8E8E8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    /* ─── Utility ─── */
+    .container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+    .text-center { text-align: center; }
+    strong { color: var(--orange-dark); }
+
+    /* ─── HERO ─── */
+    section.hero {
+      background: linear-gradient(135deg, #1A1A1A 0%, #2C2C2C 60%, #3D2000 100%);
+      color: var(--white);
+      padding: 70px 24px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; left: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(245,112,10,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; right: -60px;
+      width: 350px; height: 350px;
+      background: radial-gradient(circle, rgba(245,112,10,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 40px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 22px;
+    }
+    .hero h1 span { color: var(--orange-light); }
+
+    .hero-sub {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: rgba(255,255,255,0.80);
+      max-width: 680px;
+      margin: 0 auto 36px;
+    }
+
+    .event-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+      margin-bottom: 44px;
+    }
+    .event-meta-item {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .event-meta-item .icon { font-size: 22px; }
+
+    /* ─── CTA Button ─── */
+    .cta-wrap { text-align: center; }
+
+    .btn-cta {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--orange-light), var(--orange));
+      color: var(--white);
+      font-family: 'Heebo', sans-serif;
+      font-size: 20px;
+      font-weight: 900;
+      padding: 20px 52px;
+      border-radius: 60px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 32px rgba(245,112,10,0.45);
+      transition: transform 0.18s, box-shadow 0.18s;
+      position: relative;
+    }
+    .btn-cta:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 12px 40px rgba(245,112,10,0.55);
+    }
+    .btn-cta:active { transform: translateY(0); }
+
+    .btn-sub {
+      display: block;
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      margin-top: 10px;
+      font-weight: 400;
+    }
+
+    /* ─── Spots Warning ─── */
+    .spots-bar {
+      background: var(--orange);
+      color: var(--white);
+      text-align: center;
+      padding: 12px 24px;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.3px;
+    }
+
+    /* ─── Section Shared ─── */
+    section { padding: 72px 0; }
+    section:nth-child(even):not(.hero):not(.price-section) { background: var(--section-bg); }
+
+    .section-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 18px;
+    }
+    .section-body {
+      font-size: 17px;
+      color: var(--text-mid);
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    /* ─── Problem Section ─── */
+    .problem-list {
+      list-style: none;
+      max-width: 640px;
+      margin: 0 auto 32px;
+    }
+    .problem-list li {
+      padding: 14px 20px 14px 20px;
+      border-right: 4px solid var(--orange);
+      background: var(--white);
+      border-radius: 8px;
+      margin-bottom: 14px;
+      font-size: 17px;
+      color: var(--text-mid);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .problem-list li::before { content: '❌ '; }
+
+    /* ─── Agitate ─── */
+    .agitate-box {
+      background: linear-gradient(135deg, #1A1A1A, #2C2C2C);
+      color: var(--white);
+      border-radius: 16px;
+      padding: 44px 40px;
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .agitate-box::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(245,112,10,0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .agitate-box p { font-size: 18px; line-height: 1.75; color: rgba(255,255,255,0.88); }
+    .agitate-box p + p { margin-top: 18px; }
+
+    /* ─── What Is It ─── */
+    .what-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .what-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px 24px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .what-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(245,112,10,0.12);
+      border-color: var(--orange-light);
+    }
+    .what-card .icon { font-size: 40px; margin-bottom: 14px; display: block; }
+    .what-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .what-card p { font-size: 15px; color: var(--text-light); }
+
+    /* ─── Benefits ─── */
+    .benefit-list { list-style: none; max-width: 680px; margin: 0 auto; }
+    .benefit-list li {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 17px;
+    }
+    .benefit-list li:last-child { border-bottom: none; }
+    .benefit-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      background: var(--orange-pale);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      margin-top: 2px;
+    }
+    .benefit-list li strong { display: block; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; font-size: 17px; }
+    .benefit-list li span { color: var(--text-light); font-size: 15px; }
+
+    /* ─── About ─── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 40px;
+    }
+    @media (max-width: 600px) { .about-grid { grid-template-columns: 1fr; } }
+    .about-card {
+      background: var(--white);
+      border-radius: 16px;
+      border: 2px solid var(--border);
+      padding: 32px 28px;
+      position: relative;
+    }
+    .about-card:first-child { border-color: var(--orange); }
+    .about-role {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 6px;
+    }
+    .about-name { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+    .about-card p { font-size: 16px; color: var(--text-mid); line-height: 1.7; }
+    .about-stat {
+      display: inline-block;
+      background: var(--orange-pale);
+      color: var(--orange-dark);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 40px;
+      margin-top: 14px;
+      margin-left: 8px;
+    }
+
+    /* ─── Testimonials ─── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 30px 26px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '❝';
+      font-size: 48px;
+      color: var(--orange-pale);
+      position: absolute;
+      top: 12px;
+      left: 20px;
+      line-height: 1;
+    }
+    .testimonial-text { font-size: 16px; color: var(--text-mid); line-height: 1.7; margin-bottom: 20px; }
+    .testimonial-author { font-weight: 700; font-size: 15px; }
+    .testimonial-biz { font-size: 13px; color: var(--text-light); }
+
+    /* Placeholder slot */
+    .testimonial-placeholder {
+      background: repeating-linear-gradient(
+        45deg,
+        var(--orange-pale),
+        var(--orange-pale) 10px,
+        var(--white) 10px,
+        var(--white) 20px
+      );
+      border: 2px dashed var(--orange-light);
+      border-radius: 16px;
+      padding: 40px 26px;
+      text-align: center;
+      color: var(--orange-dark);
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    /* ─── Price Section ─── */
+    .price-section { background: linear-gradient(135deg, #1A1A1A, #2C2C2C); color: var(--white); }
+    .price-section .section-label { color: var(--orange-light); }
+    .price-section .section-title { color: var(--white); }
+    .price-section .section-body { color: rgba(255,255,255,0.75); }
+
+    .price-box {
+      background: rgba(255,255,255,0.05);
+      border: 2px solid var(--orange);
+      border-radius: 20px;
+      padding: 44px;
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .price-anchor {
+      color: rgba(255,255,255,0.5);
+      font-size: 15px;
+      text-decoration: line-through;
+      margin-bottom: 8px;
+    }
+    .price-main {
+      font-size: 72px;
+      font-weight: 900;
+      color: var(--orange-light);
+      line-height: 1;
+    }
+    .price-currency { font-size: 32px; vertical-align: super; }
+    .price-desc { color: rgba(255,255,255,0.65); font-size: 15px; margin-top: 10px; margin-bottom: 28px; }
+
+    .price-includes { list-style: none; text-align: right; margin: 24px 0; }
+    .price-includes li {
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 16px;
+      color: rgba(255,255,255,0.85);
+    }
+    .price-includes li::before { content: '✔ '; color: var(--orange-light); font-weight: 700; }
+
+    /* ─── FAQ ─── */
+    .faq-list { max-width: 680px; margin: 0 auto; }
+    details {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 14px;
+      background: var(--white);
+      overflow: hidden;
+    }
+    summary {
+      padding: 20px 24px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 17px;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: '+';
+      font-size: 22px;
+      color: var(--orange);
+      flex-shrink: 0;
+    }
+    details[open] summary::after { content: '−'; }
+    details[open] summary { border-bottom: 1px solid var(--border); }
+    .faq-answer {
+      padding: 20px 24px;
+      font-size: 16px;
+      color: var(--text-mid);
+      line-height: 1.75;
+    }
+
+    /* ─── Legal / Contact ─── */
+    .legal-section {
+      background: #F2F2F2;
+      padding: 56px 0;
+    }
+    .legal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    @media (max-width: 600px) { .legal-grid { grid-template-columns: 1fr; } }
+    .legal-box { background: var(--white); border-radius: 14px; padding: 28px; }
+    .legal-box h3 { font-size: 18px; font-weight: 700; margin-bottom: 16px; color: var(--text-dark); }
+    .legal-box p, .legal-box address { font-size: 15px; color: var(--text-mid); line-height: 1.75; font-style: normal; }
+    .legal-box a { color: var(--orange); text-decoration: none; font-weight: 600; }
+    .legal-box a:hover { text-decoration: underline; }
+
+    /* ─── Footer ─── */
+    footer {
+      background: #111;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+
+    /* ─── Divider ─── */
+    .divider {
+      width: 60px;
+      height: 4px;
+      background: var(--orange);
+      border-radius: 4px;
+      margin: 0 auto 32px;
+    }
+    .divider-right {
+      margin-right: 0;
+      margin-left: auto;
+    }
+
+    /* ─── What We Learn ─── */
+    .learn-list { list-style: none; max-width: 700px; margin: 0 auto; }
+    .learn-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      background: var(--white);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 26px 28px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .learn-item:hover {
+      border-color: var(--orange-light);
+      box-shadow: 0 6px 24px rgba(245,112,10,0.10);
+    }
+    .learn-num {
+      flex-shrink: 0;
+      width: 42px; height: 42px;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 18px;
+      font-weight: 900;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .learn-item h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; color: var(--text-dark); }
+    .learn-item p { font-size: 15px; color: var(--text-light); line-height: 1.6; }
+
+    /* ─── Video Testimonials ─── */
+    .video-testimonial {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .video-testimonial .yt-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      background: #000;
+    }
+    .video-testimonial .yt-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+    .video-testimonial .yt-placeholder {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #1a1a1a;
+      color: rgba(255,255,255,0.6);
+      font-size: 14px;
+      gap: 10px;
+    }
+    .video-testimonial .yt-placeholder span { font-size: 40px; }
+    .video-testimonial .yt-info {
+      padding: 16px 18px;
+    }
+    .video-testimonial .yt-author { font-weight: 700; font-size: 15px; }
+    .video-testimonial .yt-biz { font-size: 13px; color: var(--text-light); }
+
+    /* ─── WhatsApp CTA Strip ─── */
+    .wa-strip {
+      background: #25D366;
+      color: #fff;
+      text-align: center;
+      padding: 18px 24px;
+      font-weight: 700;
+      font-size: 16px;
+    }
+    .wa-strip a { color: #fff; text-decoration: underline; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 600px) {
+      section { padding: 52px 0; }
+      .hero { padding: 52px 20px 64px; }
+      .agitate-box { padding: 30px 22px; }
+      .price-box { padding: 32px 22px; }
+      .price-main { font-size: 56px; }
+      .btn-cta { font-size: 18px; padding: 18px 36px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ─── SPOTS BAR ─── -->
+  <div class="spots-bar">
+    🔥 נותרו מקומות אחרונים — המאסטרמיינד מוגבל ל-12 משתתפים בלבד
+  </div>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero text-center">
+    <div class="container">
+      <span class="hero-badge">אירוע בלעדי · 28.04 · ראש העין</span>
+
+      <h1>
+        מאסטרמיינד אחד שישפיע<br />
+        <span>על תהליך המכירה שלך בעסק</span>
+      </h1>
+
+      <p class="hero-sub">
+        12 בעלי עסקים חדי מחשבה. סדנת מכירות ושיווק ברמה הגבוהה ביותר.
+        נטוורקינג שמוביל לשיתופי פעולה אמיתיים. יום שלם — 97 ש"ח בלבד.
+      </p>
+
+      <div class="event-meta">
+        <div class="event-meta-item">
+          <span class="icon">📅</span>
+          <span>יום שני, 28.04.2025</span>
+        </div>
+        <div class="event-meta-item">
+          <span class="icon">🕑</span>
+          <span>שעה 14:00</span>
+        </div>
+        <div class="event-meta-item">
+          <span class="icon">📍</span>
+          <span>פארק אפק, ראש העין</span>
+        </div>
+        <div class="event-meta-item">
+          <span class="icon">👥</span>
+          <span>רק 12 מקומות</span>
+        </div>
+      </div>
+
+      <div class="cta-wrap">
+        <a href="#payment" class="btn-cta">כן — אני רוצה מקום במאסטרמיינד (97 ₪)</a>
+        <span class="btn-sub">תשלום מאובטח · ביטול עד 14 יום מהרכישה</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHATSAPP STRIP ─── -->
+  <div class="wa-strip">
+    💬 שאלות? דברו ישירות עם ליאב או ליאור בוואטסאפ →
+    <a href="https://wa.me/972542352910" target="_blank">054-2352910</a>
+    &nbsp;|&nbsp; לאחר הרישום תצטרפו לקבוצת עדכונים ייעודית
+  </div>
+
+  <!-- ─── PROBLEM ─── -->
+  <section>
+    <div class="container text-center">
+      <span class="section-label">מכירת לעצמך?</span>
+      <h2 class="section-title">אם אחד מהמשפטים האלה מדבר אליך —<br />המאסטרמיינד הזה בדיוק בשבילך</h2>
+      <div class="divider"></div>
+
+      <ul class="problem-list" style="text-align:right">
+        <li>אתה יודע שהעסק שלך טוב — אבל אנשים עדיין לא קונים כמו שציפית</li>
+        <li>עשית כמה סדנאות, קראת ספרים, צפית בסרטונים — ועדיין המספרים לא זזים</li>
+        <li>אתה עסוק כל הזמן, אבל לפעמים תוהה מה בדיוק משפיע על הצמיחה</li>
+        <li>אין לך סביבה של בעלי עסקים שמדברת את השפה שלך ומסוגלת להכניס אותך לראש אחר</li>
+        <li>אתה עושה שיווק "לפי תחושה" ולא לפי שיטה שמוכחת</li>
+      </ul>
+
+      <p class="section-body" style="text-align:center">
+        אם הנהנת על לפחות שניים מהאלה — המשך לקרוא.<br />
+        מה שאנחנו עושים במאסטרמיינד ישנה את הדרך שבה אתה מוכר ומשווק מהיום ואילך.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── AGITATE ─── -->
+  <section style="background: var(--orange-pale);">
+    <div class="container text-center">
+      <span class="section-label">הבעיה האמיתית</span>
+      <h2 class="section-title">הזמן שעובר בלי מערכת מכירות אמיתית<br />עולה לך הרבה יותר ממה שאתה חושב</h2>
+      <div class="divider"></div>
+
+      <div class="agitate-box">
+        <p>
+          כל חודש שחולף בלי שיטה ברורה של מכירות ושיווק הוא חודש שבו המתחרים שלך — שאולי פחות טובים ממך — מסגרים עסקאות שהיו יכולות להיות שלך.
+        </p>
+        <p>
+          הלקוחות לא קונים ממי שהכי טוב. הם קונים ממי שהכי <strong>ברור</strong> — ממי שיודע בדיוק מה לומר, מתי לומר את זה, ואיך לסגור בלי לדחוף ובלי להרגיש "מוכרני".
+        </p>
+        <p>
+          עוד חצי שנה ללא שינוי ושיטה — ותמצא את עצמך באותו מקום בדיוק: עסוק, מתוסכל, ותוהה איך אחרים גדלים.
+        </p>
+        <p>
+          <strong>או</strong> — אתה מגיע למאסטרמיינד, מקבל את הכלים, עושה נטוורקינג עם בעלי עסקים ברמה שלך, ויוצא עם תכנית פעולה ברורה.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHAT IS IT ─── -->
+  <section>
+    <div class="container text-center">
+      <span class="section-label">מה זה המאסטרמיינד?</span>
+      <h2 class="section-title">יום אחד. שלושה דברים שישנו לך את העסק.</h2>
+      <div class="divider"></div>
+      <p class="section-body">
+        זה לא קורס. זו לא הרצאה רגילה. זו חוויה שנבנתה סביב תוצאה אחת:
+        שתצא עם כלים, קשרים, ומנטליטי שונה.
+      </p>
+
+      <div class="what-grid">
+        <div class="what-card">
+          <span class="icon">🎯</span>
+          <h3>סדנת מכירות ושיווק ברמה הגבוהה ביותר</h3>
+          <p>ליאב וליאור יעבירו תוכן פרקטי, עמוק ומותאם לבעלי עסקים שכבר בדרך — לא למתחילים.</p>
+        </div>
+        <div class="what-card">
+          <span class="icon">🤝</span>
+          <h3>נטוורקינג עם בעלי עסקים חריפים</h3>
+          <p>12 אנשים שנבחרו בקפידה. הקשר הנכון עשוי להיות שווה יותר מכל קורס שקנית.</p>
+        </div>
+        <div class="what-card">
+          <span class="icon">💡</span>
+          <h3>שיתופי פעולה</h3>
+          <p>כשמרכיבים 12 בעלי עסקים חדי מחשבה באותו חדר — שיתופי הפעולה שנוצרים שם לא נוצרים בשום מקום אחר.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHAT WE LEARN ─── -->
+  <section style="background: var(--section-bg);">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">תוכן הסדנה</span>
+        <h2 class="section-title">מה נלמד במאסטרמיינד?</h2>
+        <div class="divider"></div>
+        <p class="section-body">
+          זה לא "טיפים כלליים". זה תוכן עמוק ופרקטי שאפשר ליישם מהיום הראשון.
+        </p>
+      </div>
+
+      <ul class="learn-list">
+        <li class="learn-item">
+          <div class="learn-num">1</div>
+          <div>
+            <h3>איך תהליך מכירה נכון ואמיתי צריך להיבנות</h3>
+            <p>רוב בעלי העסקים "מוכרים" בלי שיטה — ומאבדים עסקאות לא כי המוצר גרוע, אלא כי התהליך שבור. נפרק יחד את השלבים של מכירה שמנצחת, ותבין בדיוק איפה אתה מפסיד לקוחות היום.</p>
+          </div>
+        </li>
+        <li class="learn-item">
+          <div class="learn-num">2</div>
+          <div>
+            <h3>ששת הצרכים האנושיים — איך לזהות ולסגור כל לקוח לפי הצרכים שלו</h3>
+            <p>כל אדם מניע מצרך שונה. מי שמבין את זה — מוכר לכולם. נלמד את ששת הצרכים האנושיים הבסיסיים, איך לזהות אותם בזמן שיחה, ואיך להתאים את המסר כדי לסגור כל בן אדם בדרך שנכונה לו.</p>
+          </div>
+        </li>
+        <li class="learn-item">
+          <div class="learn-num">3</div>
+          <div>
+            <h3>איך מגבירים לידים מהממומן בלי לגעת בקמפיין</h3>
+            <p>רוב בעלי העסקים חושבים שלידים גרועים = קמפיין גרוע. זו טעות. ליאור יראה לכם בדיוק איך לשפר את כמות הלידים ואיכותם מהממומן — מבלי לשנות כלל את ההגדרות של המודעות.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ─── BENEFITS ─── -->
+  <section style="background: var(--section-bg);">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">מה תיקחו הביתה</span>
+        <h2 class="section-title">הסיבות האמיתיות לבוא למאסטרמיינד</h2>
+        <div class="divider"></div>
+      </div>
+
+      <ul class="benefit-list">
+        <li>
+          <div class="benefit-icon">🔥</div>
+          <div>
+            <strong>תבין בדיוק למה אנשים קונים — ואיך לגרום להם לרצות לקנות ממך</strong>
+            <span>ליאב סגר מעל 5 מיליון ₪ בעסקאות בתוך 5 שנים. הוא לא ישמור את הסודות לעצמו.</span>
+          </div>
+        </li>
+        <li>
+          <div class="benefit-icon">📣</div>
+          <div>
+            <strong>תדע בדיוק מה לאמר, איך לאמר את זה, ומתי — כדי לסגור יותר עסקאות</strong>
+            <span>שיטות שיווק ומכירה שעובדות היום, מפי מי שעושה אותן עבור עסקים אמיתיים בישראל.</span>
+          </div>
+        </li>
+        <li>
+          <div class="benefit-icon">🌐</div>
+          <div>
+            <strong>תצא עם קשרים אמיתיים שיכולים לשנות את כיוון העסק שלך</strong>
+            <span>הנטוורקינג הוא לא "חלק משעמם" — הוא עמוד השדרה של האירוע. בנינו את זה כך בכוונה.</span>
+          </div>
+        </li>
+        <li>
+          <div class="benefit-icon">⚡</div>
+          <div>
+            <strong>תקבל אנרגיה, מוטיבציה, ובהירות מהסביבה</strong>
+            <span>כשאתה בחדר עם בעלי עסקים שחושבים גדול — אי אפשר לא להידבק בזה.</span>
+          </div>
+        </li>
+        <li>
+          <div class="benefit-icon">📋</div>
+          <div>
+            <strong>תצא עם תכנית פעולה ברורה לששת החודשים הקרובים</strong>
+            <span>לא עוד "יפה, אבל מה עכשיו?" — תדע בדיוק מה הצעדים הבאים שלך.</span>
+          </div>
+        </li>
+      </ul>
+
+      <div class="cta-wrap" style="margin-top: 44px;">
+        <a href="#payment" class="btn-cta" style="background: linear-gradient(135deg, var(--orange-light), var(--orange)); color: white;">
+          אני רוצה את המקום שלי במאסטרמיינד
+        </a>
+        <span class="btn-sub" style="color: var(--text-light);">12 מקומות בלבד · 97 ₪ · המאסטרמיינד 28.04 ב-14:00</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ─── -->
+  <section>
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">המנחים</span>
+        <h2 class="section-title">מי עומד מאחורי האירוע?</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-role">מאמן מכירות</div>
+          <div class="about-name">ליאב</div>
+          <p>
+            שנה וחצי של אימון מכירות לבעלי עסקים — עשרות לקוחות שהגדילו את המכירות שלהם בצורה מדידה.
+            לפני זה — 5 שנים בשטח כאיש מכירות שסגר מעל <strong>5 מיליון ₪ בעסקאות</strong>.
+          </p>
+          <p style="margin-top:12px">
+            ליאב לא מלמד תיאוריה. הוא מלמד מה שעבד לו — ומה שהוא מיישם כל יום עם הלקוחות שלו.
+          </p>
+          <span class="about-stat">5+ מיליון ₪ בעסקאות</span>
+          <span class="about-stat">1.5 שנות אימון</span>
+        </div>
+
+        <div class="about-card">
+          <div class="about-role">שיווק ואסטרטגיה</div>
+          <div class="about-name">ליאור</div>
+          <p>
+            ליאור הוא האיש מאחורי הקלעים — מי שבנה את המערכת השיווקית של ליאב ושל בעלי העסקים שעובדים איתם.
+          </p>
+          <p style="margin-top:12px">
+            הוא מכיר את הצד שרוב בעלי העסקים מתעלמים ממנו: איך לגרום לאנשים לבוא אליך — לפני שאתה מתחיל למכור.
+          </p>
+          <span class="about-stat">שיווק לבעלי עסקים</span>
+          <span class="about-stat">תוצאות מדידות</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TESTIMONIALS ─── -->
+  <section style="background: var(--section-bg);">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">מה אומרים עליה</span>
+        <h2 class="section-title">בעלי עסקים שכבר עברו סדנה עם ליאב</h2>
+        <div class="divider"></div>
+      </div>
+
+      <!-- המלצות טקסט -->
+      <div class="testimonials-grid">
+
+        <!-- === מקום להמלצה טקסט 1 === -->
+        <div class="testimonial-placeholder">
+          📝 מקום להמלצה ראשונה<br />(הוסף ציטוט + שם + עסק)
+        </div>
+
+        <!-- === מקום להמלצה טקסט 2 === -->
+        <div class="testimonial-placeholder">
+          📝 מקום להמלצה שנייה<br />(הוסף ציטוט + שם + עסק)
+        </div>
+
+        <!-- === מקום להמלצה טקסט 3 === -->
+        <div class="testimonial-placeholder">
+          📝 מקום להמלצה שלישית<br />(הוסף ציטוט + שם + עסק)
+        </div>
+
+        <!--
+          ══════════════════════════════════════════════════
+          דוגמה להמלצת טקסט — מחק placeholder והכנס:
+
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "ליאב שינה לי לגמרי את הגישה למכירות."
+            </p>
+            <div class="testimonial-author">ישראל ישראלי</div>
+            <div class="testimonial-biz">בעלים, חברת XYZ</div>
+          </div>
+          ══════════════════════════════════════════════════
+        -->
+
+      </div>
+
+      <!-- המלצות וידאו -->
+      <h3 style="text-align:center; margin: 48px 0 28px; font-size:20px; font-weight:700;">🎥 המלצות וידאו</h3>
+      <div class="testimonials-grid">
+
+        <!-- === וידאו 1: החלף YOUR_VIDEO_ID_1 במזהה הסרטון מיוטיוב === -->
+        <div class="video-testimonial">
+          <div class="yt-wrap">
+            <!--
+              להחלפה: שנה את src ל:
+              https://www.youtube.com/embed/YOUR_VIDEO_ID_1
+            -->
+            <div class="yt-placeholder">
+              <span>▶️</span>
+              הוסף לינק יוטיוב 1<br />(החלף את ה-src בקישור ה-embed)
+            </div>
+          </div>
+          <div class="yt-info">
+            <div class="yt-author">שם הממליץ</div>
+            <div class="yt-biz">עסק / תחום</div>
+          </div>
+        </div>
+
+        <!-- === וידאו 2 === -->
+        <div class="video-testimonial">
+          <div class="yt-wrap">
+            <div class="yt-placeholder">
+              <span>▶️</span>
+              הוסף לינק יוטיוב 2
+            </div>
+          </div>
+          <div class="yt-info">
+            <div class="yt-author">שם הממליץ</div>
+            <div class="yt-biz">עסק / תחום</div>
+          </div>
+        </div>
+
+        <!-- === וידאו 3 === -->
+        <div class="video-testimonial">
+          <div class="yt-wrap">
+            <div class="yt-placeholder">
+              <span>▶️</span>
+              הוסף לינק יוטיוב 3
+            </div>
+          </div>
+          <div class="yt-info">
+            <div class="yt-author">שם הממליץ</div>
+            <div class="yt-biz">עסק / תחום</div>
+          </div>
+        </div>
+
+        <!--
+          ══════════════════════════════════════════════════════
+          דוגמה לוידאו אמיתי — מחק את ה-placeholder div והכנס:
+
+          <div class="video-testimonial">
+            <div class="yt-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/XXXXXXXXXXX"
+                allow="accelerometer; autoplay; clipboard-write;
+                       encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="yt-info">
+              <div class="yt-author">ישראל ישראלי</div>
+              <div class="yt-biz">בעלים, חברת XYZ</div>
+            </div>
+          </div>
+
+          המזהה של הסרטון הוא החלק אחרי ?v= בקישור היוטיוב.
+          לדוגמה: youtube.com/watch?v=XXXXXXXXXXX → embed/XXXXXXXXXXX
+          ══════════════════════════════════════════════════════
+        -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PRICE ─── -->
+  <section class="price-section text-center" id="payment">
+    <div class="container">
+      <span class="section-label">ההשקעה</span>
+      <h2 class="section-title">יום שלם של ערך. מחיר שאין מה לדון עליו.</h2>
+      <div class="divider"></div>
+
+      <p class="section-body">
+        שעה אחת עם מאמן מכירות טוב עולה בדרך כלל 500–1,500 ₪.<br />
+        קורסי מכירות ושיווק — 2,000–10,000 ₪.<br />
+        המאסטרמיינד שלנו: <strong>97 ₪ בלבד</strong> — כי אנחנו רוצים שאתה תבוא, לא שתתלבט.
+      </p>
+
+      <div class="price-box">
+        <div class="price-anchor">ערך של מאות שעות אימון</div>
+        <div class="price-main">
+          <span class="price-currency">₪</span>97
+        </div>
+        <div class="price-desc">תשלום חד פעמי · כולל הכל</div>
+
+        <ul class="price-includes">
+          <li>סדנת מכירות ושיווק מעמיקה עם ליאב וליאור</li>
+          <li>נטוורקינג עם 12 בעלי עסקים נבחרים</li>
+          <li>כלים ותכנית פעולה ברורה</li>
+          <li>אפשרות לשיתופי פעולה עסקיים</li>
+          <li>תוכן שתוכל ליישם מחר בבוקר</li>
+        </ul>
+
+        <a
+          href="https://wa.me/972XXXXXXXXX?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A9%D7%9C%D7%9D%20%D7%95%D7%9C%D7%94%D7%99%D7%A8%D7%A9%D7%9D%20%D7%9C%D7%9E%D7%90%D7%A1%D7%98%D7%A8%D7%9E%D7%99%D7%99%D7%A0%D7%93%2028.04"
+          class="btn-cta"
+          id="pay-btn"
+          style="font-size:18px; padding: 20px 40px;"
+        >
+          כן — אני מגיע למאסטרמיינד (97 ₪)
+        </a>
+        <!--
+          ══════════════════════════════════════════════════════════
+          להחליף את ה-href עם קישור תשלום אמיתי (Icount, PayPal,
+          Tranzila, או כל מערכת שאתה משתמש בה).
+          מחק את קישור הווצאפ למעלה והוסף קישור תשלום ישיר.
+          ══════════════════════════════════════════════════════════
+        -->
+
+        <p style="color: rgba(255,255,255,0.5); font-size: 13px; margin-top: 16px;">
+          🔒 תשלום מאובטח · ניתן לביטול עד 14 ימי עסקים מהרכישה
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─── -->
+  <section>
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">שאלות נפוצות</span>
+        <h2 class="section-title">יש לך שאלה? כנראה יש לה תשובה כאן</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="faq-list">
+
+        <details>
+          <summary>האם זה מתאים לי גם אם אני בתחילת הדרך?</summary>
+          <div class="faq-answer">
+            האירוע מיועד לבעלי עסקים שכבר עובדים ורוצים לגדול — לא לאנשים שמתלבטים אם לפתוח עסק. אם יש לך עסק פעיל ואתה רוצה יותר מכירות ויותר לקוחות, אתה בדיוק במקום הנכון.
+          </div>
+        </details>
+
+        <details>
+          <summary>למה 97 ₪? זה לא נשמע רציני...</summary>
+          <div class="faq-answer">
+            אנחנו רוצים להסיר את כל המחסום הכספי ולמלא את החדר באנשים הנכונים. 97 ₪ זה מחיר שמסנן אנשים שלא באמת רוצים להשתתף — אבל לא עוצר אף בעל עסק רציני. הערך שתקבל הרבה יותר גדול מהמחיר.
+          </div>
+        </details>
+
+        <details>
+          <summary>מה המבנה של היום?</summary>
+          <div class="faq-answer">
+            המאסטרמיינד מתחיל ב-14:00 ב"המלאכה 16, פארק אפק, ראש העין". כולל: נטוורקינג ופגישות, סדנת מכירות ושיווק עם ליאב וליאור, ועבודה מעשית שתוכל ליישם מהיום הראשון. תאריך: 28.04.2025.
+          </div>
+        </details>
+
+        <details>
+          <summary>מה קורה אם אני לא יכול להגיע אחרי שרשמתי?</summary>
+          <div class="faq-answer">
+            ניתן לבטל ולקבל החזר מלא עד 14 ימי עסקים מיום הרכישה, בהתאם לחוק הגנת הצרכן הישראלי. ראה פרטים מלאים בתקנון הביטולים בתחתית העמוד.
+          </div>
+        </details>
+
+        <details>
+          <summary>האם יהיו הקלטות?</summary>
+          <div class="faq-answer">
+            האירוע הוא חי ואינטראקטיבי — הכוח שלו הוא בחדר, בשיחות, ובאנרגיה. לכן לא מוכננות הקלטות. זו עוד סיבה לבוא פיזית.
+          </div>
+        </details>
+
+        <details>
+          <summary>איך אפשר ליצור קשר לפני המאסטרמיינד?</summary>
+          <div class="faq-answer">
+            ניתן לפנות ישירות לוואטסאפ האישי של ליאב (<a href="https://wa.me/972542352910" target="_blank" style="color:var(--orange);">054-2352910</a>) או של ליאור, ונשמח לענות על כל שאלה.<br /><br />
+            בנוסף, לאחר הרישום תצטרף ל<strong>קבוצת הוואטסאפ הייעודית של המאסטרמיינד</strong> — שם נעדכן על לוגיסטיקה, תוכן מקדים, ופרטים נוספים.
+          </div>
+        </details>
+
+      </div>
+
+      <div class="cta-wrap" style="margin-top: 48px;">
+        <a href="#payment" class="btn-cta" style="background: linear-gradient(135deg, var(--orange-light), var(--orange)); color: white;">
+          אני רוצה להבטיח את המקום שלי עכשיו
+        </a>
+        <span class="btn-sub" style="color: var(--text-light);">נותרו מקומות אחרונים — 12 משתתפים בלבד</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── LEGAL / CONTACT ─── -->
+  <section class="legal-section">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:36px;">
+        <span class="section-label">פרטי קשר ותנאים</span>
+        <h2 class="section-title" style="font-size:26px;">שקיפות מלאה — כי כך אנחנו עובדים</h2>
+      </div>
+
+      <div class="legal-grid">
+
+        <!-- פרטי קשר -->
+        <div class="legal-box">
+          <h3>📞 פרטי יצירת קשר</h3>
+          <address>
+            <strong>שם:</strong> ליאב כהן — מאמן מכירות<br /><br />
+            <strong>כתובת האירוע:</strong><br />
+            המלאכה 16, פארק אפק<br />
+            ראש העין<br /><br />
+            <strong>טלפון / וואטסאפ:</strong><br />
+            <a href="https://wa.me/972542352910" target="_blank">054-2352910</a><br /><br />
+            <strong>אימייל:</strong><br />
+            <a href="mailto:liavcohen798@gmail.com">liavcohen798@gmail.com</a><br /><br />
+            <strong>💬 קבוצת וואטסאפ עדכונים:</strong><br />
+            לאחר הרישום תצורף לקבוצת הוואטסאפ הייעודית של המאסטרמיינד לכל העדכונים והפרטים.
+          </address>
+        </div>
+
+        <!-- תקנון ביטולים -->
+        <div class="legal-box">
+          <h3>📋 תקנון ביטולים</h3>
+          <p>
+            בהתאם לחוק הגנת הצרכן התשמ"א-1981 ותקנות הגנת הצרכן (ביטול עסקה), התשע"א-2010:
+          </p>
+          <p style="margin-top:12px;">
+            <strong>ביטול עסקה:</strong> ניתן לבטל את הרכישה תוך <strong>14 ימי עסקים</strong> מיום ביצוע העסקה, ובלבד שהביטול נעשה לפחות 2 ימי עסקים לפני מועד האירוע (28.04.2025).
+          </p>
+          <p style="margin-top:12px;">
+            <strong>אופן הביטול:</strong> בכתב בלבד — דרך וואטסאפ או אימייל לפרטים המפורטים.
+          </p>
+          <p style="margin-top:12px;">
+            <strong>החזר כספי:</strong> יינתן החזר מלא של דמי הרישום בניכוי דמי ביטול בסך 5% מהעסקה או 100 ₪, הנמוך מביניהם, בהתאם לחוק.
+          </p>
+          <p style="margin-top:12px;">
+            <strong>לאחר המועד:</strong> ביטולים שיתקבלו פחות מ-2 ימי עסקים לפני האירוע לא יזכו בהחזר כספי, אלא במקרים חריגים על פי שיקול דעת בעל האירוע.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <p>© 2025 ליאב כהן — מאמן מכירות · המלאכה 16, פארק אפק, ראש העין</p>
+    <p style="margin-top:6px;">
+      כל הזכויות שמורות ·
+      <a href="https://wa.me/972542352910">054-2352910</a> ·
+      <a href="mailto:liavcohen798@gmail.com">liavcohen798@gmail.com</a>
+    </p>
+    <p style="margin-top:12px; font-size:12px; opacity:0.5;">
+      דף זה עומד בדרישות חוק הגנת הצרכן הישראלי.
+      תאריך האירוע: 28.04.2025 · מחיר: 97 ₪ כולל מע"מ.
+    </p>
+  </footer>
+
+</body>
+</html>
