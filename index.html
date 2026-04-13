@@ -161,8 +161,7 @@
     }
 
     /* ─── Section Shared ─── */
-    section { padding: 72px 0; position: relative; }
-    section:nth-child(even):not(.hero):not(.price-section) { background: var(--section-bg); }
+    section { padding: 72px 0; position: relative; background: var(--white); }
 
     /* subtle separator between sections */
     section:not(.hero):not(.price-section)::after {
@@ -241,6 +240,7 @@
     }
     .agitate-bubble .b-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
     .agitate-bubble p { margin: 0; }
+    .bubble-resonance { margin-top: 8px !important; font-size: 14px; color: var(--orange-dark); font-weight: 700; }
     .agitate-bubble.bubble-punch {
       background: linear-gradient(135deg, var(--orange), #d95500);
       color: var(--white);
@@ -418,11 +418,17 @@
       text-decoration: line-through;
       margin-bottom: 8px;
     }
+    @keyframes pulse-price {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(255,140,42,0)); }
+      50% { transform: scale(1.06); filter: drop-shadow(0 0 14px rgba(255,140,42,0.7)); }
+    }
     .price-main {
       font-size: 72px;
       font-weight: 900;
       color: var(--orange-light);
       line-height: 1;
+      display: inline-block;
+      animation: pulse-price 2.4s ease-in-out infinite;
     }
     .price-currency { font-size: 32px; vertical-align: super; }
     .price-desc { color: rgba(255,255,255,0.65); font-size: 15px; margin-top: 10px; margin-bottom: 28px; }
@@ -638,7 +644,7 @@
         </div>
         <div class="event-meta-item">
           <span class="icon">🕑</span>
-          <span>שעה 14:00</span>
+          <span>שעה 15:00</span>
         </div>
         <div class="event-meta-item">
           <span class="icon">📍</span>
@@ -668,7 +674,6 @@
   <!-- ─── PROBLEM ─── -->
   <section>
     <div class="container text-center">
-      <span class="section-label">מכירת לעצמך?</span>
       <h2 class="section-title">אם אחד מהמשפטים האלה מדבר אליך,<br />המאסטרמיינד הזה בדיוק בשבילך</h2>
       <div class="divider"></div>
 
@@ -681,8 +686,13 @@
       </ul>
 
       <p class="section-body" style="text-align:center">
-        אם הסכמת על לפחות שניים מהאלה, תמשיך לקרוא.
+        אם הסכמת על לפחות שניים מאלה, תמשיך לקרוא.
       </p>
+
+      <div class="cta-wrap" style="margin-top: 32px;">
+        <a href="#payment" class="btn-cta">כן — זה מדבר אליי, אני רוצה מקום</a>
+        <span class="btn-sub" style="color: var(--text-light);">נותרו מקומות אחרונים · 97 ₪ בלבד</span>
+      </div>
     </div>
   </section>
 
@@ -704,7 +714,10 @@
         </div>
         <div class="agitate-bubble">
           <span class="b-icon">🧠</span>
-          <p>הלקוחות לא קונים ממי שהכי טוב. הם קונים ממי שנותן להם הכי הרבה <strong>וודאות</strong> מבלי להרגיש דוחף. זה מיומנות שאפשר ללמוד.</p>
+          <div>
+            <p>הלקוחות לא קונים ממי שהכי טוב. הם קונים ממי שנותן להם הכי הרבה <strong>וודאות</strong> מבלי להרגיש דוחף. זה מיומנות שאפשר ללמוד!</p>
+            <p class="bubble-resonance">אם המשפט הזה פגע בך, המאסטרמיינד הזה בדיוק בשבילך.</p>
+          </div>
         </div>
         <div class="agitate-bubble">
           <span class="b-icon">⏳</span>
@@ -719,7 +732,7 @@
   </section>
 
   <!-- ─── WHAT IS IT ─── -->
-  <section>
+  <section style="background: var(--section-bg);">
     <div class="container text-center">
       <span class="section-label">מה זה המאסטרמיינד?</span>
       <h2 class="section-title">יום אחד. שלושה דברים שישנו לך את העסק.</h2>
@@ -749,7 +762,7 @@
   </section>
 
   <!-- ─── WHAT WE LEARN ─── -->
-  <section style="background: var(--section-bg);">
+  <section>
     <div class="container">
       <div class="text-center">
         <span class="section-label">תוכן הסדנה</span>
@@ -771,9 +784,9 @@
         <li class="learn-item">
           <div class="learn-num">2</div>
           <div>
-            <h3>ששת הצרכים האנושיים — איך לזהות ולסגור כל לקוח לפי הצרכים שלו</h3>
-            <p>כל אדם מניע מצרך שונה. מי שמבין את זה יכול למכור לכל אחד. נלמד את ששת הצרכים האנושיים הבסיסיים, איך לזהות אותם בזמן שיחה, ואיך להתאים את המסר בדיוק לאדם שמולך.</p>
-            <p><strong>זו אחת היכולות שהכי משפיעות על אחוז הסגירה.</strong></p>
+            <h3>יצירת אמון מהיר על ידי השלילה</h3>
+            <p>רוב אנשי המכירות מנסים לברוח מההתנגדויות הקשות, ולכן הם מאבדים את המכירה בסוף השיחה. אני אראה לך איך לדבר בדיוק את הדברים שכולם מנסים להימנע מהם, ועל ידי כך לבנות אמון ופתיחות עם הליד הרבה יותר מהר.</p>
+            <p><strong>מי שמאמץ את זה מפסיק לקבל "אני צריך לחשוב על זה" בסוף שיחה.</strong></p>
           </div>
         </li>
         <li class="learn-item">
@@ -838,13 +851,13 @@
         <a href="https://mrng.to/kNNAEvwuIj" class="btn-cta" style="background: linear-gradient(135deg, var(--orange-light), var(--orange)); color: white;">
           אני רוצה את המקום שלי במאסטרמיינד
         </a>
-        <span class="btn-sub" style="color: var(--text-light);">12 מקומות בלבד · 97 ₪ · המאסטרמיינד 28.04 ב-14:00</span>
+        <span class="btn-sub" style="color: var(--text-light);">12 מקומות בלבד · 97 ₪ · המאסטרמיינד 28.04 ב-15:00</span>
       </div>
     </div>
   </section>
 
   <!-- ─── ABOUT ─── -->
-  <section>
+  <section style="background: var(--section-bg);">
     <div class="container">
       <div class="text-center">
         <span class="section-label">המנחים</span>
@@ -857,14 +870,14 @@
           <div class="about-role">מאמן מכירות</div>
           <div class="about-name">ליאב</div>
           <p>
-            שנה וחצי של אימון מכירות לבעלי עסקים, עשרות לקוחות שהגדילו את המכירות שלהם בצורה מדידה.
+            שנתיים של אימון מכירות לבעלי עסקים, עשרות לקוחות שהגדילו את המכירות שלהם בצורה מדידה.
             לפני זה 5 שנים בשטח כאיש מכירות שסגר מעל <strong>5 מיליון ₪ בעסקאות</strong>.
           </p>
           <p style="margin-top:12px">
             אני לא מלמד תיאוריה. אני מלמד מה שעבד לי ומה שאני מיישם כל יום עם הלקוחות שלי.
           </p>
           <span class="about-stat">5+ מיליון ₪ בעסקאות</span>
-          <span class="about-stat">1.5 שנות אימון</span>
+          <span class="about-stat">2 שנות אימון</span>
         </div>
 
         <div class="about-card">
@@ -887,27 +900,27 @@
   <section style="background: var(--section-bg);">
     <div class="container">
       <div class="text-center">
-        <span class="section-label">מה אומרים עליה</span>
-        <h2 class="section-title">בעלי עסקים שכבר עברו סדנה עם ליאב</h2>
+        <span class="section-label">המלצות</span>
+        <h2 class="section-title">מה אומרים על הסדנא הקודמת?</h2>
         <div class="divider"></div>
       </div>
 
       <!-- המלצות טקסט -->
       <div class="testimonials-grid">
 
-        <!-- === מקום להמלצה טקסט 1 === -->
+        <!-- === חגי === -->
         <div class="testimonial-placeholder">
-          📝 מקום להמלצה ראשונה<br />(הוסף ציטוט + שם + עסק)
+          🖼️ תמונה/פוסט של חגי<br />(הוסף ציטוט + שם + עסק)
         </div>
 
-        <!-- === מקום להמלצה טקסט 2 === -->
+        <!-- === הדר === -->
         <div class="testimonial-placeholder">
-          📝 מקום להמלצה שנייה<br />(הוסף ציטוט + שם + עסק)
+          🖼️ תמונה/פוסט של הדר<br />(הוסף ציטוט + שם + עסק)
         </div>
 
-        <!-- === מקום להמלצה טקסט 3 === -->
+        <!-- === מקום להמלצה שלישית === -->
         <div class="testimonial-placeholder">
-          📝 מקום להמלצה שלישית<br />(הוסף ציטוט + שם + עסק)
+          📝 מקום להמלצה נוספת<br />(הוסף ציטוט + שם + עסק)
         </div>
 
         <!--
@@ -1009,12 +1022,11 @@
 
       <p class="section-body">
         שעה אחת עם מאמן מכירות טוב עולה בדרך כלל 500–1,500 ₪.<br />
-        קורסי מכירות ושיווק — 2,000–10,000 ₪.<br />
+        קורסי מכירות ושיווק — 5,000–15,000 ₪.<br />
         המאסטרמיינד שלנו: <strong>97 ₪ בלבד.</strong>
       </p>
 
       <div class="price-box">
-        <div class="price-anchor">ערך של מאות שעות אימון</div>
         <div class="price-main">
           <span class="price-currency">₪</span>97
         </div>
@@ -1081,7 +1093,7 @@
         <details>
           <summary>מה המבנה של היום?</summary>
           <div class="faq-answer">
-            המאסטרמיינד מתחיל ב-14:00 ב"המלאכה 16, פארק אפק, ראש העין" ונמשך 4 שעות. כולל: נטוורקינג ופגישות, סדנת מכירות ושיווק עם ליאב וליאור, ועבודה מעשית שתוכל ליישם מהיום הראשון. <strong>אוכל ושתייה כלולים.</strong> תאריך: 28.04.2025.
+            המאסטרמיינד מתחיל ב-15:00 ב"המלאכה 16, פארק אפק, ראש העין" ונמשך 4 שעות. כולל: נטוורקינג ופגישות, סדנת מכירות ושיווק עם ליאב וליאור, ועבודה מעשית שתוכל ליישם מהיום הראשון. <strong>אוכל ושתייה כלולים.</strong> תאריך: 28.04.2025.
           </div>
         </details>
 
