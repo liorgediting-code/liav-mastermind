@@ -161,8 +161,21 @@
     }
 
     /* ─── Section Shared ─── */
-    section { padding: 72px 0; }
+    section { padding: 72px 0; position: relative; }
     section:nth-child(even):not(.hero):not(.price-section) { background: var(--section-bg); }
+
+    /* subtle separator between sections */
+    section:not(.hero):not(.price-section)::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 88%;
+      height: 1px;
+      background: linear-gradient(to left, transparent, rgba(0,0,0,0.09) 25%, rgba(0,0,0,0.09) 75%, transparent);
+      pointer-events: none;
+    }
 
     .section-label {
       display: inline-block;
