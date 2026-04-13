@@ -204,27 +204,51 @@
     }
     .problem-list li::before { content: '❌ '; }
 
-    /* ─── Agitate ─── */
-    .agitate-box {
+    /* ─── Agitate Bubbles ─── */
+    .agitate-bubbles {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: right;
+    }
+    .agitate-bubble {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 20px 22px 20px 20px;
+      border-right: 4px solid var(--orange);
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--text-dark);
+    }
+    .agitate-bubble .b-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+    .agitate-bubble p { margin: 0; }
+    .agitate-bubble.bubble-punch {
+      background: linear-gradient(135deg, var(--orange), #d95500);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 19px;
+      border-right-color: transparent;
+    }
+    .agitate-pivot {
+      margin-top: 20px;
       background: linear-gradient(135deg, #1A1A1A, #2C2C2C);
       color: var(--white);
-      border-radius: 16px;
-      padding: 44px 40px;
-      max-width: 700px;
-      margin: 0 auto;
-      position: relative;
-      overflow: hidden;
+      border-radius: 14px;
+      padding: 24px 28px;
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 680px;
+      margin-inline: auto;
+      text-align: right;
+      border: 2px solid var(--orange);
     }
-    .agitate-box::before {
-      content: '';
-      position: absolute;
-      top: 0; right: 0;
-      width: 200px; height: 200px;
-      background: radial-gradient(circle, rgba(245,112,10,0.2) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .agitate-box p { font-size: 18px; line-height: 1.75; color: rgba(255,255,255,0.88); }
-    .agitate-box p + p { margin-top: 18px; }
+    .agitate-pivot strong { color: var(--orange-light); font-size: 20px; }
 
     /* ─── What Is It ─── */
     .what-grid {
@@ -656,22 +680,27 @@
       <h2 class="section-title">הזמן שעובר בלי מערכת מכירות אמיתית<br />עולה לך הרבה יותר ממה שאתה חושב</h2>
       <div class="divider"></div>
 
-      <div class="agitate-box">
-        <p>
-          כל חודש שחולף בלי שיטה ברורה של מכירות ושיווק הוא חודש שבו המתחרים שלך, שאולי פחות טובים ממך, סוגרים עסקאות שהיו יכולות להיות שלך.
-        </p>
-        <p>
-          <strong>הכסף לא נעלם. הוא הלך למישהו אחר.</strong>
-        </p>
-        <p>
-          הלקוחות לא קונים ממי שהכי טוב. הם קונים ממי שנותן להם הכי הרבה <strong>וודאות</strong> מבלי להרגיש דוחף. זה מיומנות שאפשר ללמוד.
-        </p>
-        <p>
-          עוד חצי שנה בלי שיטה ותמצא את עצמך באותו מקום בדיוק: עסוק, מתוסכל, ותוהה איך אחרים גדלים כשהם פחות טובים ממך.
-        </p>
-        <p>
-          <strong>או</strong> שאתה מגיע למאסטרמיינד, מפצח את תהליך המכירה שלך, יוצא עם קשרים אמיתיים ותכנית פעולה שמיישמים מחר בבוקר.
-        </p>
+      <div class="agitate-bubbles">
+        <div class="agitate-bubble">
+          <span class="b-icon">📉</span>
+          <p>כל חודש שחולף בלי שיטה ברורה הוא חודש שבו המתחרים שלך, שאולי פחות טובים ממך, סוגרים עסקאות שהיו יכולות להיות שלך.</p>
+        </div>
+        <div class="agitate-bubble bubble-punch">
+          <span class="b-icon">💸</span>
+          <p>הכסף לא נעלם. הוא הלך למישהו אחר.</p>
+        </div>
+        <div class="agitate-bubble">
+          <span class="b-icon">🧠</span>
+          <p>הלקוחות לא קונים ממי שהכי טוב. הם קונים ממי שנותן להם הכי הרבה <strong>וודאות</strong> מבלי להרגיש דוחף. זה מיומנות שאפשר ללמוד.</p>
+        </div>
+        <div class="agitate-bubble">
+          <span class="b-icon">⏳</span>
+          <p>עוד חצי שנה בלי שיטה ותמצא את עצמך באותו מקום בדיוק: עסוק, מתוסכל, ותוהה איך אחרים גדלים כשהם פחות טובים ממך.</p>
+        </div>
+      </div>
+
+      <div class="agitate-pivot">
+        <strong>או</strong> שאתה מגיע למאסטרמיינד, מפצח את תהליך המכירה שלך, יוצא עם קשרים אמיתיים ותכנית פעולה שמיישמים מחר בבוקר.
       </div>
     </div>
   </section>
