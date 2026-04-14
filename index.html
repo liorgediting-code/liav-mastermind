@@ -310,8 +310,7 @@
       font-size: 18px;
       margin-top: 2px;
     }
-    .benefit-list li strong { display: block; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; font-size: 17px; }
-    .benefit-list li span { color: var(--text-light); font-size: 15px; }
+    .benefit-list li strong { display: block; font-weight: 700; color: var(--text-dark); font-size: 17px; }
 
     /* ─── About ─── */
     .about-grid {
@@ -351,52 +350,6 @@
       margin-left: 8px;
     }
 
-    /* ─── Testimonials ─── */
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
-    }
-    .testimonial-card {
-      background: var(--white);
-      border-radius: 16px;
-      padding: 30px 26px;
-      border: 1px solid var(--border);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-      position: relative;
-    }
-    .testimonial-card::before {
-      content: '❝';
-      font-size: 48px;
-      color: var(--orange-pale);
-      position: absolute;
-      top: 12px;
-      left: 20px;
-      line-height: 1;
-    }
-    .testimonial-text { font-size: 16px; color: var(--text-mid); line-height: 1.7; margin-bottom: 20px; }
-    .testimonial-author { font-weight: 700; font-size: 15px; }
-    .testimonial-biz { font-size: 13px; color: var(--text-light); }
-
-    /* Placeholder slot */
-    .testimonial-placeholder {
-      background: repeating-linear-gradient(
-        45deg,
-        var(--orange-pale),
-        var(--orange-pale) 10px,
-        var(--white) 10px,
-        var(--white) 20px
-      );
-      border: 2px dashed var(--orange-light);
-      border-radius: 16px;
-      padding: 40px 26px;
-      text-align: center;
-      color: var(--orange-dark);
-      font-size: 15px;
-      font-weight: 500;
-    }
-
     /* ─── Price Section ─── */
     .price-section { background: linear-gradient(135deg, #1A1A1A, #2C2C2C); color: var(--white); }
     .price-section .section-label { color: var(--orange-light); }
@@ -411,12 +364,6 @@
       max-width: 520px;
       margin: 0 auto;
       text-align: center;
-    }
-    .price-anchor {
-      color: rgba(255,255,255,0.5);
-      font-size: 15px;
-      text-decoration: line-through;
-      margin-bottom: 8px;
     }
     @keyframes pulse-price {
       0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(255,140,42,0)); }
@@ -514,10 +461,6 @@
       border-radius: 4px;
       margin: 0 auto 32px;
     }
-    .divider-right {
-      margin-right: 0;
-      margin-left: auto;
-    }
 
     /* ─── What We Learn ─── */
     .learn-list { list-style: none; max-width: 700px; margin: 0 auto; }
@@ -564,7 +507,7 @@
       width: 100%;
       display: block;
       object-fit: contain;
-      max-height: 700px;
+      max-height: 520px;
       background: #f5f5f5;
     }
     .screenshot-card .yt-info {
@@ -592,8 +535,7 @@
     }
     .video-testimonial .yt-wrap {
       position: relative;
-      padding-bottom: 177.78%; /* 9:16 for Shorts */
-      height: 0;
+      height: 420px;
       background: #000;
     }
     .video-testimonial .yt-wrap iframe {
@@ -602,25 +544,92 @@
       width: 100%; height: 100%;
       border: 0;
     }
-    .video-testimonial .yt-placeholder {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: #1a1a1a;
-      color: rgba(255,255,255,0.6);
-      font-size: 14px;
-      gap: 10px;
-    }
-    .video-testimonial .yt-placeholder span { font-size: 40px; }
     .video-testimonial .yt-info {
-      padding: 16px 18px;
+      padding: 14px 18px;
+      text-align: center;
     }
     .video-testimonial .yt-author { font-weight: 700; font-size: 15px; }
     .video-testimonial .yt-biz { font-size: 13px; color: var(--text-light); }
+
+    /* ─── Carousels ─── */
+    .testimonial-carousels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-top: 40px;
+      align-items: start;
+    }
+    @media (max-width: 680px) {
+      .testimonial-carousels { grid-template-columns: 1fr; gap: 40px; }
+    }
+    .t-col-title {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text-dark);
+    }
+    .carousel { position: relative; }
+    .carousel-viewport {
+      overflow: hidden;
+      border-radius: 16px;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .carousel-slide {
+      flex: 0 0 100%;
+      min-width: 0;
+    }
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .carousel-btn {
+      background: var(--white);
+      border: 2px solid var(--border);
+      border-radius: 50%;
+      width: 36px; height: 36px;
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      flex-shrink: 0;
+      color: var(--text-dark);
+      line-height: 1;
+    }
+    .carousel-btn:hover {
+      background: var(--orange);
+      color: var(--white);
+      border-color: var(--orange);
+      box-shadow: 0 4px 16px rgba(245,112,10,0.3);
+    }
+    .carousel-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      flex: 1;
+    }
+    .carousel-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--border);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      border: none;
+      padding: 0;
+    }
+    .carousel-dot.active {
+      background: var(--orange);
+      transform: scale(1.4);
+    }
 
     /* ─── WhatsApp CTA Strip ─── */
     .wa-strip {
@@ -637,10 +646,10 @@
     @media (max-width: 600px) {
       section { padding: 52px 0; }
       .hero { padding: 52px 20px 64px; }
-      .agitate-box { padding: 30px 22px; }
       .price-box { padding: 32px 22px; }
       .price-main { font-size: 56px; }
       .btn-cta { font-size: 18px; padding: 18px 36px; }
+      .video-testimonial .yt-wrap { height: 340px; }
     }
   </style>
 </head>
@@ -663,8 +672,7 @@
       </h1>
 
       <p class="hero-sub">
-        12 בעלי עסקים חדי מחשבה. סדנת מכירות ושיווק ברמה הגבוהה ביותר.
-        נטוורקינג שמוביל לשיתופי פעולה אמיתיים. יום שלם, 97 ש"ח בלבד.
+        סדנת מכירות ושיווק ברמה הגבוהה ביותר. 12 בעלי עסקים. 97 ₪ בלבד.
       </p>
 
       <div class="event-meta">
@@ -704,19 +712,17 @@
   <!-- ─── PROBLEM ─── -->
   <section>
     <div class="container text-center">
-      <h2 class="section-title">אם אחד מהמשפטים האלה מדבר אליך,<br />המאסטרמיינד הזה בדיוק בשבילך</h2>
+      <h2 class="section-title">מזהה את עצמך?</h2>
       <div class="divider"></div>
 
       <ul class="problem-list" style="text-align:right">
-        <li>אתה יודע שהעסק שלך טוב, אבל אנשים עדיין לא קונים</li>
-        <li>עשית כמה סדנאות, קראת ספרים, צפית בסרטונים, ועדיין המספרים לא זזים</li>
-        <li>אתה עסוק כל הזמן, אבל שום דבר לא משפיע על הצמיחה</li>
-        <li>אין לך סביבה של בעלי עסקים שמדברת את השפה שלך</li>
-        <li>אתה עושה שיווק לפי תחושה ולא לפי שיטה שמוכחת</li>
+        <li>העסק שלך טוב, אבל אנשים לא קונים</li>
+        <li>עסוק כל הזמן, אבל המספרים לא זזים</li>
+        <li>עושה שיווק לפי תחושה ולא לפי שיטה</li>
       </ul>
 
       <p class="section-body" style="text-align:center">
-        אם הסכמת על לפחות שניים מאלה, תמשיך לקרוא.
+        הסכמת על אחד מאלה? המאסטרמיינד בדיוק בשבילך.
       </p>
 
       <div class="cta-wrap" style="margin-top: 32px;">
@@ -726,37 +732,178 @@
     </div>
   </section>
 
+  <!-- ─── TESTIMONIALS ─── -->
+  <section>
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">המלצות</span>
+        <h2 class="section-title">מה אומרים לקוחות שלנו?</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="testimonial-carousels">
+
+        <!-- Photo Carousel -->
+        <div>
+          <p class="t-col-title">📸 לקוחות ממליצים</p>
+          <div class="carousel" id="photo-carousel">
+            <div class="carousel-viewport">
+              <div class="carousel-track" id="photo-track">
+                <div class="carousel-slide">
+                  <div class="screenshot-card">
+                    <img src="hadar.jpeg" alt="המלצת הדר" />
+                    <div class="yt-info">
+                      <div class="yt-author">הדר</div>
+                      <div class="yt-biz">לקוחה</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-slide">
+                  <div class="screenshot-card">
+                    <img src="hagi.jpeg" alt="המלצת חגי" />
+                    <div class="yt-info">
+                      <div class="yt-author">חגי</div>
+                      <div class="yt-biz">לקוח</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-controls">
+              <button class="carousel-btn" onclick="carouselPrev('photo')">❯</button>
+              <div class="carousel-dots" id="photo-dots">
+                <button class="carousel-dot active" onclick="carouselGoto('photo', 0)"></button>
+                <button class="carousel-dot" onclick="carouselGoto('photo', 1)"></button>
+              </div>
+              <button class="carousel-btn" onclick="carouselNext('photo')">❮</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Carousel -->
+        <div>
+          <p class="t-col-title">🎥 מהסדנא הקודמת</p>
+          <div class="carousel" id="video-carousel">
+            <div class="carousel-viewport">
+              <div class="carousel-track" id="video-track">
+
+                <div class="carousel-slide">
+                  <div class="video-testimonial">
+                    <div class="yt-wrap">
+                      <iframe src="https://www.youtube.com/embed/YGGVvVF1_DI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="yt-info">
+                      <div class="yt-author">מאור</div>
+                      <div class="yt-biz">בעל עסק</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-slide">
+                  <div class="video-testimonial">
+                    <div class="yt-wrap">
+                      <iframe src="https://www.youtube.com/embed/la1i8byP5Bc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="yt-info">
+                      <div class="yt-author">תמיר</div>
+                      <div class="yt-biz">בעל עסק</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-slide">
+                  <div class="video-testimonial">
+                    <div class="yt-wrap">
+                      <iframe src="https://www.youtube.com/embed/WV4NJvTyyqc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="yt-info">
+                      <div class="yt-author">סטיב</div>
+                      <div class="yt-biz">בעל עסק</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-slide">
+                  <div class="video-testimonial">
+                    <div class="yt-wrap">
+                      <iframe src="https://www.youtube.com/embed/D44iP3kflZE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="yt-info">
+                      <div class="yt-author">ישראל</div>
+                      <div class="yt-biz">בעל עסק</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-slide">
+                  <div class="video-testimonial">
+                    <div class="yt-wrap">
+                      <iframe src="https://www.youtube.com/embed/pL11Dp5yVHE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="yt-info">
+                      <div class="yt-author">נועם</div>
+                      <div class="yt-biz">בעל עסק</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-slide">
+                  <div class="video-testimonial">
+                    <div class="yt-wrap">
+                      <iframe src="https://www.youtube.com/embed/7SiyiL7dGLk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="yt-info">
+                      <div class="yt-author">נדב</div>
+                      <div class="yt-biz">בעל עסק</div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="carousel-controls">
+              <button class="carousel-btn" onclick="carouselPrev('video')">❯</button>
+              <div class="carousel-dots" id="video-dots">
+                <button class="carousel-dot active" onclick="carouselGoto('video', 0)"></button>
+                <button class="carousel-dot" onclick="carouselGoto('video', 1)"></button>
+                <button class="carousel-dot" onclick="carouselGoto('video', 2)"></button>
+                <button class="carousel-dot" onclick="carouselGoto('video', 3)"></button>
+                <button class="carousel-dot" onclick="carouselGoto('video', 4)"></button>
+                <button class="carousel-dot" onclick="carouselGoto('video', 5)"></button>
+              </div>
+              <button class="carousel-btn" onclick="carouselNext('video')">❮</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ─── AGITATE ─── -->
   <section style="background: var(--orange-pale);">
     <div class="container text-center">
       <span class="section-label">הבעיה האמיתית</span>
-      <h2 class="section-title">הזמן שעובר בלי מערכת מכירות אמיתית<br />עולה לך הרבה יותר ממה שאתה חושב</h2>
+      <h2 class="section-title">כל יום בלי שיטה עולה לך כסף</h2>
       <div class="divider"></div>
 
       <div class="agitate-bubbles">
-        <div class="agitate-bubble">
-          <span class="b-icon">📉</span>
-          <p>כל חודש שחולף בלי שיטה ברורה הוא חודש שבו המתחרים שלך, שאולי פחות טובים ממך, סוגרים עסקאות שהיו יכולות להיות שלך.</p>
-        </div>
         <div class="agitate-bubble bubble-punch">
           <span class="b-icon">💸</span>
-          <p>הכסף לא נעלם. הוא הלך למישהו אחר.</p>
+          <p>הכסף לא נעלם. הוא הלך למתחרים שלך.</p>
         </div>
         <div class="agitate-bubble">
           <span class="b-icon">🧠</span>
-          <div>
-            <p>הלקוחות לא קונים ממי שהכי טוב. הם קונים ממי שנותן להם הכי הרבה <strong>וודאות</strong> מבלי להרגיש דוחף. זה מיומנות שאפשר ללמוד!</p>
-            <p class="bubble-resonance">אם המשפט הזה פגע בך, המאסטרמיינד הזה בדיוק בשבילך.</p>
-          </div>
+          <p>לקוחות קונים ממי שנותן להם <strong>וודאות</strong>, לא ממי שהכי טוב. זו מיומנות שאפשר ללמוד.</p>
         </div>
         <div class="agitate-bubble">
           <span class="b-icon">⏳</span>
-          <p>עוד חצי שנה בלי שיטה ותמצא את עצמך באותו מקום בדיוק: עסוק, מתוסכל, ותוהה איך אחרים גדלים כשהם פחות טובים ממך.</p>
+          <p>עוד חצי שנה בלי שיטה = אותו מקום. עסוק, מתוסכל, רואה אחרים גדלים.</p>
         </div>
       </div>
 
       <div class="agitate-pivot">
-        <strong>או</strong> שאתה מגיע למאסטרמיינד, מפצח את תהליך המכירה שלך, יוצא עם קשרים אמיתיים ותכנית פעולה שמיישמים מחר בבוקר.
+        <strong>או</strong> שאתה מגיע למאסטרמיינד, מפצח את תהליך המכירה ויוצא עם תכנית פעולה שמיישמים מחר בבוקר.
       </div>
     </div>
   </section>
@@ -765,65 +912,58 @@
   <section style="background: var(--section-bg);">
     <div class="container text-center">
       <span class="section-label">מה זה המאסטרמיינד?</span>
-      <h2 class="section-title">יום אחד! שלושה דברים שישנו לך את העסק.</h2>
+      <h2 class="section-title">יום אחד. שלושה דברים שישנו לך את העסק.</h2>
       <div class="divider"></div>
-      <p class="section-body">
-        זה לא קורס. זו לא הרצאה רגילה. זו חוויה שנבנתה סביב תוצאה אחת: שתצא עם כלים, קשרים, ומיינדסט שונה.
-      </p>
 
       <div class="what-grid">
         <div class="what-card">
           <span class="icon">🎯</span>
-          <h3>סדנת מכירות ושיווק ברמה הגבוהה ביותר</h3>
-          <p>תוכן חד ופרקטי שמיישמים מחר בבוקר, מותאם לבעלי עסקים שכבר באמצע הדרך ורוצים לפצח את המכירות.</p>
+          <h3>סדנת מכירות ושיווק</h3>
+          <p>תוכן חד שמיישמים מחר בבוקר.</p>
         </div>
         <div class="what-card">
           <span class="icon">🤝</span>
-          <h3>נטוורקינג עם בעלי עסקים חריפים</h3>
-          <p>12 בעלי עסקים כמוך באותו חדר. קשר אחד נכון שם שווה יותר מאלפי שקלים בקורסים.</p>
+          <h3>נטוורקינג עם 12 בעלי עסקים</h3>
+          <p>קשר אחד נכון שווה יותר מאלפי שקלים בקורסים.</p>
         </div>
         <div class="what-card">
           <span class="icon">💡</span>
           <h3>שיתופי פעולה</h3>
-          <p>כשמרכיבים 12 בעלי עסקים חדי מחשבה באותו חדר, שיתופי הפעולה שנוצרים שם לא נוצרים בשום מקום אחר.</p>
+          <p>הזדמנויות שלא נוצרות בשום מקום אחר.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ─── WHAT WE LEARN ─── -->
-  <section>
+  <section style="background: var(--section-bg);">
     <div class="container">
       <div class="text-center">
         <span class="section-label">תוכן הסדנה</span>
         <h2 class="section-title">מה נלמד במאסטרמיינד?</h2>
         <div class="divider"></div>
-        <p class="section-body">
-          זה לא "טיפים כלליים". זה תוכן חד ופרקטי שמיישמים מהיום הראשון ורואים תוצאות.
-        </p>
       </div>
 
       <ul class="learn-list">
         <li class="learn-item">
           <div class="learn-num">1</div>
           <div>
-            <h3>איך תהליך מכירה נכון ואמיתי צריך להיבנות</h3>
-            <p>רוב בעלי העסקים מוכרים בלי תבנית מכירה ומאבדים עסקאות לא כי המוצר גרוע, אלא כי הם לא מעבירים ללקוח את הוודאות שהוא רוצה. אני הולך להראות לך איך תהליך מכירה נכון בנוי.</p>
+            <h3>איך לבנות תהליך מכירה שסוגר</h3>
+            <p>לתת ללקוח את הוודאות שהוא צריך כדי לקנות.</p>
           </div>
         </li>
         <li class="learn-item">
           <div class="learn-num">2</div>
           <div>
             <h3>יצירת אמון מהיר על ידי השלילה</h3>
-            <p>רוב אנשי המכירות מנסים לברוח מההתנגדויות הקשות, ולכן הם מאבדים את המכירה בסוף השיחה. אני אראה לך איך לדבר בדיוק את הדברים שכולם מנסים להימנע מהם, ועל ידי כך לבנות אמון ופתיחות עם הליד הרבה יותר מהר.</p>
-            <p><strong>מי שמאמץ את זה מפסיק לקבל "אני צריך לחשוב על זה" בסוף שיחה.</strong></p>
+            <p>להפסיק לשמוע "אני צריך לחשוב על זה" בסוף שיחה.</p>
           </div>
         </li>
         <li class="learn-item">
           <div class="learn-num">3</div>
           <div>
-            <h3>איך מגבירים לידים מהממומן בלי לגעת בקמפיין</h3>
-            <p>רוב בעלי העסקים חושבים שלידים גרועים = קמפיין גרוע. זו טעות. ליאור יראה לך בדיוק איך להכפיל את כמות הלידים ואיכותם מהממומן מבלי לשנות בכלל את הגדרות המודעות. אתה כנראה מפסיד לידים עכשיו בלי לדעת.</p>
+            <h3>להכפיל לידים מהממומן בלי לגעת בקמפיין</h3>
+            <p>ליאור יראה לך איך לשפר תוצאות בלי לשנות הגדרות מודעות.</p>
           </div>
         </li>
       </ul>
@@ -831,11 +971,11 @@
   </section>
 
   <!-- ─── BENEFITS ─── -->
-  <section style="background: var(--section-bg);">
+  <section>
     <div class="container">
       <div class="text-center">
         <span class="section-label">מה תיקחו הביתה</span>
-        <h2 class="section-title">הסיבות האמיתיות לבוא למאסטרמיינד</h2>
+        <h2 class="section-title">מה תיקחו הביתה</h2>
         <div class="divider"></div>
       </div>
 
@@ -843,36 +983,19 @@
         <li>
           <div class="benefit-icon">🔥</div>
           <div>
-            <strong>תפסיק לאבד עסקאות כי אתה לא מבין מה מניע את הלקוח לקנות</strong>
-            <span>סגרתי מעל 5 מיליון ₪ בעסקאות תוך 5 שנים. אני הולך לתת לך את כל מה שלמדתי.</span>
+            <strong>סקריפט מכירה מוכן לשימוש מהיום הראשון</strong>
           </div>
         </li>
         <li>
-          <div class="benefit-icon">📣</div>
+          <div class="benefit-icon">🤝</div>
           <div>
-            <strong>תדע בדיוק מה לומר, איך לומר את זה, ומתי, כדי לסגור יותר עסקאות</strong>
-            <span>שיטות מכירה ושיווק שעובדות היום, ממי שמיישם אותן עם עסקים כל יום. תצא עם סקריפט מכירה שמוכן לשימוש.</span>
-          </div>
-        </li>
-        <li>
-          <div class="benefit-icon">🌐</div>
-          <div>
-            <strong>תצא עם קשרים אמיתיים שיכולים לשנות את כיוון העסק שלך</strong>
-            <span>הנטוורקינג הוא עמוד השדרה של האירוע. בנינו אותו כך שתצא עם לפחות 3 שמות שתרצה לפנות אליהם בשבוע הראשון.</span>
-          </div>
-        </li>
-        <li>
-          <div class="benefit-icon">⚡</div>
-          <div>
-            <strong>תפסיק לעבוד לבד בבועה בלי סביבה שמושכת אותך קדימה</strong>
-            <span>כשאתה בחדר עם בעלי עסקים שחושבים בגדול, אי אפשר לא לצאת אחר.</span>
+            <strong>קשרים עם בעלי עסקים שמושכים אותך קדימה</strong>
           </div>
         </li>
         <li>
           <div class="benefit-icon">📋</div>
           <div>
-            <strong>תצא עם תכנית פעולה ברורה לשיחת מכירה הבאה שלך</strong>
-            <span>בלי "יפה, אבל מה עכשיו?", תדע בדיוק מה הצעדים הבאים שלך.</span>
+            <strong>תכנית פעולה ברורה לשיחת המכירה הבאה שלך</strong>
           </div>
         </li>
       </ul>
@@ -899,13 +1022,7 @@
         <div class="about-card">
           <div class="about-role">מאמן מכירות</div>
           <div class="about-name">ליאב</div>
-          <p>
-            שנה וחצי של אימון מכירות לבעלי עסקים, עשרות לקוחות שהגדילו את המכירות שלהם בצורה מדידה.
-            לפני זה 5 שנים בשטח כאיש מכירות שסגר מעל <strong>5 מיליון ₪ בעסקאות</strong>.
-          </p>
-          <p style="margin-top:12px">
-            אני לא מלמד תיאוריה. אני מלמד מה שעבד לי ומה שאני מיישם כל יום עם הלקוחות שלי.
-          </p>
+          <p>5 שנים בשטח. מעל 5 מיליון ₪ בעסקאות. מלמד מה שעובד לו כל יום עם לקוחות.</p>
           <span class="about-stat">5+ מיליון ₪ בעסקאות</span>
           <span class="about-stat">1.5 שנות אימון</span>
         </div>
@@ -913,158 +1030,10 @@
         <div class="about-card">
           <div class="about-role">שיווק ואסטרטגיה</div>
           <div class="about-name">ליאור</div>
-          <p>
-            שנתיים בתחום השיווק, ליאור הוא האיש מאחורי הקלעים שבנה את המערכת השיווקית שלי ושל בעלי העסקים שאנחנו עובדים איתם.
-          </p>
-          <p style="margin-top:12px">
-            הוא מכיר את הצד שרוב בעלי העסקים מתעלמים ממנו: איך לגרום לאנשים לבוא אליך לפני שאתה מתחיל למכור.
-          </p>
+          <p>שנתיים בשיווק. בנה מערכות שיווקיות שגורמות לאנשים לבוא אליך לפני שאתה מתחיל למכור.</p>
           <span class="about-stat">שיווק לבעלי עסקים</span>
           <span class="about-stat">2 שנות ניסיון בשיווק</span>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── TESTIMONIALS ─── -->
-  <section style="background: var(--section-bg);">
-    <div class="container">
-      <div class="text-center">
-        <span class="section-label">המלצות</span>
-        <h2 class="section-title">מה אומרים לקוחות שלנו?</h2>
-        <div class="divider"></div>
-      </div>
-
-      <!-- תמונות לקוחות -->
-      <div class="testimonials-grid">
-        <div class="screenshot-card">
-          <img src="hadar.jpeg" alt="המלצת הדר" />
-          <div class="yt-info">
-            <div class="yt-author">הדר</div>
-            <div class="yt-biz">לקוחה</div>
-          </div>
-        </div>
-        <div class="screenshot-card">
-          <img src="hagi.jpeg" alt="המלצת חגי" />
-          <div class="yt-info">
-            <div class="yt-author">חגי</div>
-            <div class="yt-biz">לקוח</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- המלצות וידאו על הסדנא הקודמת -->
-      <h3 style="text-align:center; margin: 56px 0 28px; font-size:20px; font-weight:700;">🎥 מה אומרים על הסדנא הקודמת?</h3>
-      <div class="testimonials-grid">
-
-        <div class="video-testimonial">
-          <div class="yt-wrap">
-            <iframe
-              src="https://www.youtube.com/embed/YGGVvVF1_DI"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="yt-info">
-            <div class="yt-author">מאור</div>
-            <div class="yt-biz">בעל עסק</div>
-          </div>
-        </div>
-
-        <div class="video-testimonial">
-          <div class="yt-wrap">
-            <iframe
-              src="https://www.youtube.com/embed/la1i8byP5Bc"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="yt-info">
-            <div class="yt-author">תמיר</div>
-            <div class="yt-biz">בעל עסק</div>
-          </div>
-        </div>
-
-        <div class="video-testimonial">
-          <div class="yt-wrap">
-            <iframe
-              src="https://www.youtube.com/embed/WV4NJvTyyqc"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="yt-info">
-            <div class="yt-author">סטיב</div>
-            <div class="yt-biz">בעל עסק</div>
-          </div>
-        </div>
-
-        <div class="video-testimonial">
-          <div class="yt-wrap">
-            <iframe
-              src="https://www.youtube.com/embed/D44iP3kflZE"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="yt-info">
-            <div class="yt-author">ישראל</div>
-            <div class="yt-biz">בעל עסק</div>
-          </div>
-        </div>
-
-        <div class="video-testimonial">
-          <div class="yt-wrap">
-            <iframe
-              src="https://www.youtube.com/embed/pL11Dp5yVHE"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="yt-info">
-            <div class="yt-author">נועם</div>
-            <div class="yt-biz">בעל עסק</div>
-          </div>
-        </div>
-
-        <div class="video-testimonial">
-          <div class="yt-wrap">
-            <iframe
-              src="https://www.youtube.com/embed/7SiyiL7dGLk"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <div class="yt-info">
-            <div class="yt-author">נדב</div>
-            <div class="yt-biz">בעל עסק</div>
-          </div>
-        </div>
-
-        <!--
-          ══════════════════════════════════════════════════════
-          דוגמה לוידאו אמיתי — מחק את ה-placeholder div והכנס:
-
-          <div class="video-testimonial">
-            <div class="yt-wrap">
-              <iframe
-                src="https://www.youtube.com/embed/XXXXXXXXXXX"
-                allow="accelerometer; autoplay; clipboard-write;
-                       encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-              </iframe>
-            </div>
-            <div class="yt-info">
-              <div class="yt-author">ישראל ישראלי</div>
-              <div class="yt-biz">בעלים, חברת XYZ</div>
-            </div>
-          </div>
-
-          המזהה של הסרטון הוא החלק אחרי ?v= בקישור היוטיוב.
-          לדוגמה: youtube.com/watch?v=XXXXXXXXXXX → embed/XXXXXXXXXXX
-          ══════════════════════════════════════════════════════
-        -->
-
       </div>
     </div>
   </section>
@@ -1073,14 +1042,8 @@
   <section class="price-section text-center" id="payment">
     <div class="container">
       <span class="section-label">ההשקעה</span>
-      <h2 class="section-title">4 שעות של ערך. מחיר שאין מה לדון עליו.</h2>
+      <h2 class="section-title">4 שעות של ערך. 97 ₪ בלבד.</h2>
       <div class="divider"></div>
-
-      <p class="section-body">
-        שעה אחת עם מאמן מכירות טוב עולה בדרך כלל 500–1,500 ₪.<br />
-        קורסי מכירות ושיווק — 5,000–15,000 ₪.<br />
-        המאסטרמיינד שלנו: <strong>97 ₪ בלבד.</strong>
-      </p>
 
       <div class="price-box">
         <div class="price-main">
@@ -1089,13 +1052,10 @@
         <div class="price-desc">תשלום חד פעמי · כולל הכל</div>
 
         <ul class="price-includes">
-          <li>סדנת מכירות ושיווק מעמיקה עם ליאב וליאור</li>
+          <li>סדנת מכירות ושיווק עם ליאב וליאור</li>
           <li>נטוורקינג עם 12 בעלי עסקים נבחרים</li>
-          <li>כלים ותכנית פעולה ברורה</li>
-          <li>אפשרות לשיתופי פעולה עסקיים</li>
-          <li>תוכן שתוכל ליישם מחר בבוקר</li>
-          <li>אוכל ושתייה — הכל כלול</li>
-          <li>4 שעות אינטנסיביות של ערך אמיתי</li>
+          <li>כלים ותכנית פעולה ליישום מיידי</li>
+          <li>4 שעות אינטנסיביות + אוכל ושתייה</li>
         </ul>
 
         <a
@@ -1106,13 +1066,6 @@
         >
           כן, אני מגיע למאסטרמיינד (97 ₪)
         </a>
-        <!--
-          ══════════════════════════════════════════════════════════
-          להחליף את ה-href עם קישור תשלום אמיתי (Icount, PayPal,
-          Tranzila, או כל מערכת שאתה משתמש בה).
-          מחק את קישור הווצאפ למעלה והוסף קישור תשלום ישיר.
-          ══════════════════════════════════════════════════════════
-        -->
 
         <p style="color: rgba(255,255,255,0.5); font-size: 13px; margin-top: 16px;">
           🔒 תשלום מאובטח · ניתן לביטול עד 14 ימי עסקים מהרכישה
@@ -1126,52 +1079,44 @@
     <div class="container">
       <div class="text-center">
         <span class="section-label">שאלות נפוצות</span>
-        <h2 class="section-title">יש לך שאלה? כנראה יש לה תשובה כאן</h2>
+        <h2 class="section-title">שאלות נפוצות</h2>
         <div class="divider"></div>
       </div>
 
       <div class="faq-list">
 
         <details>
-          <summary>האם זה מתאים לי גם אם אני בתחילת הדרך?</summary>
+          <summary>מתאים לי גם אם אני בתחילת הדרך?</summary>
           <div class="faq-answer">
-            האירוע מיועד לבעלי עסקים שכבר עובדים ורוצים לגדול, לא לאנשים שמתלבטים אם לפתוח עסק. אם יש לך עסק פעיל ואתה רוצה יותר מכירות ויותר לקוחות, אתה בדיוק במקום הנכון.
+            אם יש לך עסק פעיל ואתה רוצה יותר מכירות, אתה בדיוק במקום הנכון.
           </div>
         </details>
 
         <details>
-          <summary>למה 97 ₪? זה לא נשמע רציני...</summary>
+          <summary>למה רק 97 ₪?</summary>
           <div class="faq-answer">
-            אנחנו רוצים להסיר את כל המחסום הכספי ולמלא את החדר באנשים הנכונים. 97 ₪ זה מחיר שמסנן אנשים שלא באמת רוצים לגדול, אבל לא עוצר אף בעל עסק רציני. הערך שתקבל הרבה יותר גדול מהמחיר, ואם אתה לא מוכן לשלם 97 שקל כנראה שאתה לא מתאים.
+            המטרה היא למלא את החדר באנשים הנכונים, לא להרוויח מהכרטיסים.
           </div>
         </details>
 
         <details>
           <summary>מה המבנה של היום?</summary>
           <div class="faq-answer">
-            המאסטרמיינד מתחיל ב-15:00 ב"המלאכה 16, פארק אפק, ראש העין" ונמשך 4 שעות. כולל: נטוורקינג ופגישות, סדנת מכירות ושיווק עם ליאב וליאור, ועבודה מעשית שתוכל ליישם מהיום הראשון. <strong>אוכל ושתייה כלולים.</strong> תאריך: 28.04.2025.
+            15:00, המלאכה 16, פארק אפק, ראש העין. 4 שעות: נטוורקינג + סדנת מכירות ושיווק + עבודה מעשית. <strong>אוכל ושתייה כלולים.</strong>
           </div>
         </details>
 
         <details>
-          <summary>מה קורה אם אני לא יכול להגיע אחרי שרשמתי?</summary>
+          <summary>מה אם אני לא יכול להגיע?</summary>
           <div class="faq-answer">
-            ניתן לבטל ולקבל החזר מלא עד 14 ימי עסקים מיום הרכישה, בהתאם לחוק הגנת הצרכן הישראלי. ראה פרטים מלאים בתקנון הביטולים בתחתית העמוד.
+            ביטול והחזר מלא עד 14 ימי עסקים מהרכישה, לפחות 2 ימי עסקים לפני האירוע.
           </div>
         </details>
 
         <details>
-          <summary>האם יהיו הקלטות?</summary>
+          <summary>שאלות נוספות?</summary>
           <div class="faq-answer">
-            האירוע הוא חי ואינטראקטיבי, הכוח שלו הוא בחדר, בשיחות, ובאנרגיה. לכן לא יהיו הקלטות.
-          </div>
-        </details>
-
-        <details>
-          <summary>איך אפשר ליצור קשר לפני המאסטרמיינד?</summary>
-          <div class="faq-answer">
-            ניתן לפנות ישירות לוואטסאפ האישי של ליאב (<a href="https://wa.me/972542352910" target="_blank" style="color:var(--orange);">054-2352910</a>) או של ליאור, ונשמח לענות על כל שאלה.<br /><br />
-            בנוסף, לאחר הרישום תצטרף ל<strong>קבוצת הוואטסאפ הייעודית של המאסטרמיינד</strong> — שם נעדכן על לוגיסטיקה, תוכן מקדים, ופרטים נוספים.
+            וואטסאפ לליאב: <a href="https://wa.me/972542352910" target="_blank" style="color:var(--orange);">054-2352910</a>
           </div>
         </details>
 
@@ -1191,7 +1136,7 @@
     <div class="container">
       <div class="text-center" style="margin-bottom:36px;">
         <span class="section-label">פרטי קשר ותנאים</span>
-        <h2 class="section-title" style="font-size:26px;">שקיפות מלאה — כי כך אנחנו עובדים</h2>
+        <h2 class="section-title" style="font-size:26px;">שקיפות מלאה. כי כך אנחנו עובדים.</h2>
       </div>
 
       <div class="legal-grid">
@@ -1200,16 +1145,14 @@
         <div class="legal-box">
           <h3>📞 פרטי יצירת קשר</h3>
           <address>
-            <strong>שם:</strong> ליאב כהן — מאמן מכירות<br /><br />
+            <strong>שם:</strong> ליאב כהן, מאמן מכירות<br /><br />
             <strong>כתובת האירוע:</strong><br />
             המלאכה 16, פארק אפק<br />
             ראש העין<br /><br />
             <strong>טלפון / וואטסאפ:</strong><br />
             <a href="https://wa.me/972542352910" target="_blank">054-2352910</a><br /><br />
             <strong>אימייל:</strong><br />
-            <a href="mailto:liavcohen798@gmail.com">liavcohen798@gmail.com</a><br /><br />
-            <strong>💬 קבוצת וואטסאפ עדכונים:</strong><br />
-            לאחר הרישום תצורף לקבוצת הוואטסאפ הייעודית של המאסטרמיינד לכל העדכונים והפרטים.
+            <a href="mailto:liavcohen798@gmail.com">liavcohen798@gmail.com</a>
           </address>
         </div>
 
@@ -1220,16 +1163,16 @@
             בהתאם לחוק הגנת הצרכן התשמ"א-1981 ותקנות הגנת הצרכן (ביטול עסקה), התשע"א-2010:
           </p>
           <p style="margin-top:12px;">
-            <strong>ביטול עסקה:</strong> ניתן לבטל את הרכישה תוך <strong>14 ימי עסקים</strong> מיום ביצוע העסקה, ובלבד שהביטול נעשה לפחות 2 ימי עסקים לפני מועד האירוע (28.04.2025).
+            <strong>ביטול עסקה:</strong> ניתן לבטל תוך <strong>14 ימי עסקים</strong> מיום הרכישה, ובלבד שהביטול נעשה לפחות 2 ימי עסקים לפני האירוע (28.04.2025).
           </p>
           <p style="margin-top:12px;">
-            <strong>אופן הביטול:</strong> בכתב בלבד — דרך וואטסאפ או אימייל לפרטים המפורטים.
+            <strong>אופן הביטול:</strong> בכתב בלבד, דרך וואטסאפ או אימייל.
           </p>
           <p style="margin-top:12px;">
-            <strong>החזר כספי:</strong> יינתן החזר מלא של דמי הרישום בניכוי דמי ביטול בסך 5% מהעסקה או 100 ₪, הנמוך מביניהם, בהתאם לחוק.
+            <strong>החזר כספי:</strong> החזר מלא בניכוי 5% או 100 ₪, הנמוך מביניהם.
           </p>
           <p style="margin-top:12px;">
-            <strong>לאחר המועד:</strong> ביטולים שיתקבלו פחות מ-2 ימי עסקים לפני האירוע לא יזכו בהחזר כספי, אלא במקרים חריגים על פי שיקול דעת בעל האירוע.
+            <strong>לאחר המועד:</strong> ביטולים פחות מ-2 ימי עסקים לפני האירוע לא יזכו בהחזר, אלא במקרים חריגים.
           </p>
         </div>
 
@@ -1239,7 +1182,7 @@
 
   <!-- ─── FOOTER ─── -->
   <footer>
-    <p>© 2025 ליאב כהן — מאמן מכירות · המלאכה 16, פארק אפק, ראש העין</p>
+    <p>© 2025 ליאב כהן, מאמן מכירות · המלאכה 16, פארק אפק, ראש העין</p>
     <p style="margin-top:6px;">
       כל הזכויות שמורות ·
       <a href="https://wa.me/972542352910">054-2352910</a> ·
@@ -1250,6 +1193,56 @@
       תאריך האירוע: 28.04.2025 · מחיר: 97 ₪ כולל מע"מ.
     </p>
   </footer>
+
+  <script>
+    var _c = {};
+
+    function carouselInit(id, total) {
+      _c[id] = { cur: 0, total: total };
+      carouselRender(id);
+    }
+
+    function carouselRender(id) {
+      var s = _c[id];
+      var track = document.getElementById(id + '-track');
+      var dots  = document.getElementById(id + '-dots').querySelectorAll('.carousel-dot');
+      track.style.transform = 'translateX(' + (-s.cur * 100) + '%)';
+      dots.forEach(function(d, i) { d.classList.toggle('active', i === s.cur); });
+    }
+
+    function carouselPrev(id) {
+      var s = _c[id];
+      s.cur = (s.cur - 1 + s.total) % s.total;
+      carouselRender(id);
+    }
+
+    function carouselNext(id) {
+      var s = _c[id];
+      s.cur = (s.cur + 1) % s.total;
+      carouselRender(id);
+    }
+
+    function carouselGoto(id, n) {
+      _c[id].cur = n;
+      carouselRender(id);
+    }
+
+    carouselInit('photo', 2);
+    carouselInit('video', 6);
+
+    // Touch / swipe support
+    ['photo', 'video'].forEach(function(id) {
+      var track = document.getElementById(id + '-track');
+      var startX = 0;
+      track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', function(e) {
+        var diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) {
+          if (diff > 0) carouselNext(id); else carouselPrev(id);
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
