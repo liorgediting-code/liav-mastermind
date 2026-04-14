@@ -552,6 +552,21 @@
     .learn-item h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; color: var(--text-dark); }
     .learn-item p { font-size: 15px; color: var(--text-light); line-height: 1.6; }
 
+    /* ─── Screenshot Testimonials ─── */
+    .screenshot-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .screenshot-card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      max-height: 480px;
+    }
+
     /* ─── Video Testimonials ─── */
     .video-testimonial {
       background: var(--white);
@@ -640,7 +655,7 @@
       <div class="event-meta">
         <div class="event-meta-item">
           <span class="icon">📅</span>
-          <span>יום שני, 28.04.2025</span>
+          <span>יום שלישי, 28.04.2025</span>
         </div>
         <div class="event-meta-item">
           <span class="icon">🕑</span>
@@ -665,7 +680,7 @@
       </div>
 
       <div class="cta-wrap">
-        <a href="https://mrng.to/kNNAEvwuIj" class="btn-cta">כן — אני רוצה מקום במאסטרמיינד (97 ₪)</a>
+        <a href="https://mrng.to/kNNAEvwuIj" class="btn-cta">כן, אני רוצה מקום במאסטרמיינד (97 ₪)</a>
         <span class="btn-sub">תשלום מאובטח · ביטול עד 14 יום מהרכישה</span>
       </div>
     </div>
@@ -690,7 +705,7 @@
       </p>
 
       <div class="cta-wrap" style="margin-top: 32px;">
-        <a href="#payment" class="btn-cta">כן — זה מדבר אליי, אני רוצה מקום</a>
+        <a href="#payment" class="btn-cta">כן, זה מדבר אליי, אני רוצה מקום</a>
         <span class="btn-sub" style="color: var(--text-light);">נותרו מקומות אחרונים · 97 ₪ בלבד</span>
       </div>
     </div>
@@ -735,7 +750,7 @@
   <section style="background: var(--section-bg);">
     <div class="container text-center">
       <span class="section-label">מה זה המאסטרמיינד?</span>
-      <h2 class="section-title">יום אחד. שלושה דברים שישנו לך את העסק.</h2>
+      <h2 class="section-title">יום אחד! שלושה דברים שישנו לך את העסק.</h2>
       <div class="divider"></div>
       <p class="section-body">
         זה לא קורס. זו לא הרצאה רגילה. זו חוויה שנבנתה סביב תוצאה אחת: שתצא עם כלים, קשרים, ומיינדסט שונה.
@@ -870,14 +885,14 @@
           <div class="about-role">מאמן מכירות</div>
           <div class="about-name">ליאב</div>
           <p>
-            שנתיים של אימון מכירות לבעלי עסקים, עשרות לקוחות שהגדילו את המכירות שלהם בצורה מדידה.
+            שנה וחצי של אימון מכירות לבעלי עסקים, עשרות לקוחות שהגדילו את המכירות שלהם בצורה מדידה.
             לפני זה 5 שנים בשטח כאיש מכירות שסגר מעל <strong>5 מיליון ₪ בעסקאות</strong>.
           </p>
           <p style="margin-top:12px">
             אני לא מלמד תיאוריה. אני מלמד מה שעבד לי ומה שאני מיישם כל יום עם הלקוחות שלי.
           </p>
           <span class="about-stat">5+ מיליון ₪ בעסקאות</span>
-          <span class="about-stat">2 שנות אימון</span>
+          <span class="about-stat">1.5 שנות אימון</span>
         </div>
 
         <div class="about-card">
@@ -901,52 +916,36 @@
     <div class="container">
       <div class="text-center">
         <span class="section-label">המלצות</span>
-        <h2 class="section-title">מה אומרים על הסדנא הקודמת?</h2>
+        <h2 class="section-title">מה אומרים לקוחות שלנו?</h2>
         <div class="divider"></div>
       </div>
 
-      <!-- המלצות טקסט -->
+      <!-- תמונות לקוחות -->
       <div class="testimonials-grid">
-
-        <!-- === חגי === -->
-        <div class="testimonial-placeholder">
-          🖼️ תמונה/פוסט של חגי<br />(הוסף ציטוט + שם + עסק)
-        </div>
-
-        <!-- === הדר === -->
-        <div class="testimonial-placeholder">
-          🖼️ תמונה/פוסט של הדר<br />(הוסף ציטוט + שם + עסק)
-        </div>
-
-        <!-- === מקום להמלצה שלישית === -->
-        <div class="testimonial-placeholder">
-          📝 מקום להמלצה נוספת<br />(הוסף ציטוט + שם + עסק)
-        </div>
-
-        <!--
-          ══════════════════════════════════════════════════
-          דוגמה להמלצת טקסט — מחק placeholder והכנס:
-
-          <div class="testimonial-card">
-            <p class="testimonial-text">
-              "ליאב שינה לי לגמרי את הגישה למכירות."
-            </p>
-            <div class="testimonial-author">ישראל ישראלי</div>
-            <div class="testimonial-biz">בעלים, חברת XYZ</div>
+        <div class="screenshot-card">
+          <img src="hadar.jpeg" alt="המלצת הדר" />
+          <div class="yt-info">
+            <div class="yt-author">הדר לכוחה</div>
+            <div class="yt-biz">לקוחה</div>
           </div>
-          ══════════════════════════════════════════════════
-        -->
-
+        </div>
+        <div class="screenshot-card">
+          <img src="hagi.jpeg" alt="המלצת חגי" />
+          <div class="yt-info">
+            <div class="yt-author">חגי גיליס</div>
+            <div class="yt-biz">לקוח</div>
+          </div>
+        </div>
       </div>
 
-      <!-- המלצות וידאו -->
-      <h3 style="text-align:center; margin: 48px 0 28px; font-size:20px; font-weight:700;">🎥 המלצות וידאו</h3>
+      <!-- המלצות וידאו על הסדנא הקודמת -->
+      <h3 style="text-align:center; margin: 56px 0 28px; font-size:20px; font-weight:700;">🎥 מה אומרים על הסדנא הקודמת?</h3>
       <div class="testimonials-grid">
 
         <div class="video-testimonial">
           <div class="yt-wrap">
             <iframe
-              src="https://www.youtube.com/embed/D44iP3kflZE"
+              src="https://www.youtube.com/embed/YGGVvVF1_DI"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen>
             </iframe>
@@ -960,7 +959,7 @@
         <div class="video-testimonial">
           <div class="yt-wrap">
             <iframe
-              src="https://www.youtube.com/embed/pL11Dp5yVHE"
+              src="https://www.youtube.com/embed/la1i8byP5Bc"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen>
             </iframe>
@@ -974,7 +973,7 @@
         <div class="video-testimonial">
           <div class="yt-wrap">
             <iframe
-              src="https://www.youtube.com/embed/7SiyiL7dGLk"
+              src="https://www.youtube.com/embed/WV4NJvTyyqc"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen>
             </iframe>
@@ -1048,7 +1047,7 @@
           id="pay-btn"
           style="font-size:18px; padding: 20px 40px;"
         >
-          כן — אני מגיע למאסטרמיינד (97 ₪)
+          כן, אני מגיע למאסטרמיינד (97 ₪)
         </a>
         <!--
           ══════════════════════════════════════════════════════════
