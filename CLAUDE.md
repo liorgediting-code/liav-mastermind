@@ -34,7 +34,7 @@ python3 -m http.server 8080
 
 ## Key Content Facts
 
-- **Event details:** 28.04.2025, 15:00, "המלאכה 16, פארק אפק, ראש העין", 4 hours, 12 spots, 97 ₪
+- **Event details:** 28.04.2025, 18:00, "המלאכה 16, פארק אפק, ראש העין", 4 hours, 12 spots, 97 ₪
 - **Hosts:** ליאב (sales coach, 1.5 years coaching, 5M+ ₪ in deals) and ליאור (marketing, 2 years experience)
 - **Payment link:** `https://mrng.to/kNNAEvwuIj` (appears in multiple CTAs — update all occurrences together)
 - **Contact:** WhatsApp `054-2352910` (ליאב), linked as `https://wa.me/972542352910`
