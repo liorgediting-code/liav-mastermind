@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>הרשמה לוובינר | ליאב – 8 השלבים למכירה</title>
+  <meta name="description" content="הירשם לוובינר המכירות החינמי עם ליאב. 12.05.2026, 19:00, Google Meet." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange:       #F5700A;
+      --orange-light: #FF8C2A;
+      --orange-dark:  #C95A00;
+      --orange-pale:  #FFF3EA;
+      --text-dark:    #1A1A1A;
+      --text-mid:     #3D3D3D;
+      --text-light:   #666;
+      --white:        #FFFFFF;
+      --border:       #E8E8E8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      color: var(--text-dark);
+      background: linear-gradient(135deg, #1A1A1A 0%, #2C2C2C 60%, #3D2000 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 52px 48px;
+      max-width: 520px;
+      width: 100%;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 40px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(26px, 5vw, 36px);
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      color: var(--text-dark);
+    }
+
+    h1 span { color: var(--orange); }
+
+    .sub {
+      font-size: 16px;
+      color: var(--text-mid);
+      line-height: 1.65;
+      margin-bottom: 8px;
+    }
+
+    .scarcity {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--orange-dark);
+      margin-bottom: 32px;
+    }
+
+    .divider {
+      width: 50px;
+      height: 3px;
+      background: var(--orange);
+      border-radius: 3px;
+      margin: 20px 0 28px;
+    }
+
+    /* ─── Form ─── */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 18px;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      font-family: 'Heebo', sans-serif;
+      font-size: 16px;
+      color: var(--text-dark);
+      background: #fafafa;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      direction: rtl;
+    }
+
+    input:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(245,112,10,0.12);
+      background: var(--white);
+    }
+
+    input:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .btn-submit {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, var(--orange-light), var(--orange));
+      color: var(--white);
+      font-family: 'Heebo', sans-serif;
+      font-size: 19px;
+      font-weight: 900;
+      padding: 18px 24px;
+      border-radius: 60px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 28px rgba(245,112,10,0.4);
+      transition: transform 0.18s, box-shadow 0.18s, opacity 0.18s;
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 12px 36px rgba(245,112,10,0.5);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.75;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .error-msg {
+      display: none;
+      background: #FFF0F0;
+      border: 1px solid #FFCCCC;
+      color: #CC0000;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 14px;
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    .error-msg.visible { display: block; }
+
+    /* ─── Success State ─── */
+    .success-block {
+      display: none;
+      text-align: center;
+    }
+
+    .success-block.visible { display: block; }
+
+    .success-icon {
+      font-size: 64px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .success-block h2 {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+
+    .success-block p {
+      font-size: 16px;
+      color: var(--text-mid);
+      line-height: 1.65;
+      margin-bottom: 32px;
+    }
+
+    .cal-section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+
+    .cal-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn-cal {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-family: 'Heebo', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn-cal:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+
+    .btn-gcal {
+      background: #4285F4;
+      color: white;
+    }
+
+    .btn-ical {
+      background: var(--white);
+      color: var(--text-dark);
+      border-color: var(--border);
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 24px;
+      font-size: 14px;
+      color: var(--text-light);
+      text-decoration: none;
+    }
+
+    .back-link:hover { color: var(--orange); }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 560px) {
+      .card { padding: 36px 24px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+
+    <!-- ─── Default: Form ─── -->
+    <div id="form-block">
+      <span class="badge">וובינר חינמי · ליאב · 12.05.2026 · 19:00</span>
+      <h1>שמור את <span>המקום שלך</span></h1>
+      <p class="sub">90 דקות שישנו את כל שיחות המכירה שלך. חינם לגמרי.</p>
+      <p class="scarcity">⚡ נותרו מקומות — הירשם עכשיו לפני שייגמרו</p>
+
+      <div class="divider"></div>
+
+      <form id="reg-form" novalidate>
+        <div class="form-group">
+          <label for="name">שם מלא</label>
+          <input type="text" id="name" name="name" placeholder="ישראל ישראלי" required autocomplete="name" />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">מספר טלפון</label>
+          <input type="tel" id="phone" name="phone" placeholder="050-0000000" required autocomplete="tel" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">אימייל</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+        </div>
+
+        <button type="submit" class="btn-submit" id="submit-btn">
+          אני רוצה את המקום שלי ←
+        </button>
+
+        <div class="error-msg" id="error-msg">
+          משהו השתבש — בדוק את הפרטים ונסה שוב, או צור קשר בוואטסאפ.
+        </div>
+      </form>
+    </div>
+
+    <!-- ─── Success State ─── -->
+    <div class="success-block" id="success-block">
+      <span class="success-icon">✅</span>
+      <h2>נרשמת בהצלחה!</h2>
+      <p>קישור Google Meet ישלח אליך לפני הוובינר.<br />נתראה ב-12.05 בשעה 19:00!</p>
+
+      <p class="cal-section-title">הוסף ליומן</p>
+      <div class="cal-buttons">
+        <a id="gcal-link" href="#" target="_blank" class="btn-cal btn-gcal">
+          📅 הוסף ל-Google Calendar
+        </a>
+        <a id="ical-link" href="#" download="webinar-mastermind.ics" class="btn-cal btn-ical">
+          🍎 הורד קובץ iCal (Apple / Outlook)
+        </a>
+      </div>
+
+      <a href="index.html" class="back-link">← חזרה לדף הראשי</a>
+    </div>
+
+  </div>
+
+  <script>
+    // ─── PASTE YOUR WEBHOOK URL HERE ───
+    var WEBHOOK_URL = 'PASTE_YOUR_WEBHOOK_URL_HERE';
+
+    // ─── Calendar Details ───
+    var EVENT_TITLE   = encodeURIComponent('וובינר מכירות חינמי עם ליאב');
+    var EVENT_DESC    = encodeURIComponent('8 השלבים למכירה + טכניקת השלילה. קישור Google Meet ישלח לפני האירוע.');
+    var EVENT_START   = '20260512T160000Z'; // 19:00 Asia/Jerusalem = 16:00 UTC
+    var EVENT_END     = '20260512T173000Z'; // 90 min later
+
+    // Build Google Calendar URL
+    var gcalUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+      + '&text=' + EVENT_TITLE
+      + '&dates=' + EVENT_START + '/' + EVENT_END
+      + '&details=' + EVENT_DESC
+      + '&sf=true&output=xml';
+
+    // Build iCal data URI
+    var icsContent = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Mastermind Webinar//HE',
+      'BEGIN:VEVENT',
+      'DTSTART:' + EVENT_START,
+      'DTEND:' + EVENT_END,
+      'SUMMARY:וובינר מכירות חינמי עם ליאב',
+      'DESCRIPTION:8 השלבים למכירה + טכניקת השלילה. קישור Google Meet ישלח לפני האירוע.',
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ].join('\r\n');
+
+    var icsUri = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(icsContent);
+
+    document.getElementById('gcal-link').href = gcalUrl;
+    document.getElementById('ical-link').href = icsUri;
+
+    // ─── Form Submission ───
+    document.getElementById('reg-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      var name  = document.getElementById('name').value.trim();
+      var phone = document.getElementById('phone').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var errorEl = document.getElementById('error-msg');
+      var btn = document.getElementById('submit-btn');
+
+      errorEl.classList.remove('visible');
+
+      if (!name || !phone || !email) {
+        errorEl.textContent = 'נא למלא את כל השדות.';
+        errorEl.classList.add('visible');
+        return;
+      }
+
+      // Loading state
+      btn.disabled = true;
+      btn.textContent = 'שולח...';
+      document.getElementById('name').disabled  = true;
+      document.getElementById('phone').disabled = true;
+      document.getElementById('email').disabled = true;
+
+      fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name,
+          phone: phone,
+          email: email,
+          timestamp: new Date().toISOString()
+        })
+      })
+      .then(function(res) {
+        if (!res.ok) throw new Error('server error');
+        document.getElementById('form-block').style.display = 'none';
+        document.getElementById('success-block').classList.add('visible');
+      })
+      .catch(function() {
+        btn.disabled = false;
+        btn.textContent = 'אני רוצה את המקום שלי ←';
+        document.getElementById('name').disabled  = false;
+        document.getElementById('phone').disabled = false;
+        document.getElementById('email').disabled = false;
+        errorEl.textContent = 'משהו השתבש — בדוק את הפרטים ונסה שוב, או צור קשר בוואטסאפ.';
+        errorEl.classList.add('visible');
+      });
+    });
+  </script>
+</body>
+</html>
